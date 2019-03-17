@@ -67,9 +67,55 @@
           </div>
         </v-img>
       </section>
-      <section id="about-me" class="porfolio--text">
+      <section id="about-me" class>
         <v-container>
-          <h1>About me</h1>
+          <span class="text-uppercase headline porfolio--text">About Me</span>
+          <v-layout justify-center class="mt-4">
+            <v-flex xs12>
+              <v-avatar size="200px">
+                <img :src="require('@/assets/img/me2.jpg')" alt="Andrew">
+              </v-avatar>
+            </v-flex>
+          </v-layout>
+          <v-layout row wrap justify-center>
+            <v-flex xs12 sm7>
+              <p class="white--text subheading pa-1 mt-1">
+                I am a JavaScript Full-Stack Developer. I am passionate and enthusiastic about any problems
+                relating to Software Engineering. I am not yet a JavaScript or Software expert, but I love to
+                read, code, learn and add to my skill sets everyday. I find it fulfilling proffering solutions
+                to software problems. I have worked with Java/Android, but I'm my interest is currently inclined
+                towards JavaScript.
+              </p>
+            </v-flex>
+            <v-flex xs12 sm5>
+              <v-layout column>
+                <v-flex xs12>
+                  <span class="mt-2" style="display:block">
+                    <!-- <i class="material-icons">place</i> -->
+                    <v-icon class="porfolio--text pa-1 left ml-2 heading">place</v-icon>
+                    <span class="porfolio--text pa-1 left heading text-uppercase">Location:</span>
+                    <span class="white--text pa-1 left heading">Nigeria</span>
+                  </span>
+                </v-flex>
+                <v-flex xs12>
+                  <span class="mt-4" style="display:block">
+                    <!-- <i class="material-icons">place</i> -->
+                    <v-icon class="porfolio--text pa-1 left ml-2 heading">email</v-icon>
+                    <span class="porfolio--text pa-1 left heading text-uppercase">Email:</span>
+                    <span class="white--text pa-1 left heading">Ekwughaandrew@gmail.com</span>
+                  </span>
+                </v-flex>
+                <v-flex xs12>
+                  <span class="mt-4" style="display:block">
+                    <!-- <i class="material-icons">place</i> -->
+                    <v-icon class="porfolio--text pa-1 left ml-2 heading">phone</v-icon>
+                    <span class="porfolio--text pa-1 left heading text-uppercase">Phone:</span>
+                    <span class="white--text pa-1 left heading">+2347067859271</span>
+                  </span>
+                </v-flex>
+              </v-layout>
+            </v-flex>
+          </v-layout>
           <p></p>
         </v-container>
       </section>
@@ -139,7 +185,7 @@ export default {
   background: #212121;
   margin: 0px !important;
 }
-span {
+span.display-2 {
   display: block;
 }
 .about {
@@ -160,7 +206,7 @@ span {
   overflow-x: hidden; /* Disable horizontal scroll */
   padding-top: 20px;
   width: 400px;
-  overflow-y: scroll;
+  overflow-y: auto;
 }
 
 .slaveSidebar {
@@ -212,8 +258,8 @@ p {
   .triple-s {
     display: block;
   }
-  #profession{
-    margin-top:350px;
+  #profession {
+    margin-top: 350px;
   }
 }
 </style>
