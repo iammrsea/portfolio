@@ -70,12 +70,7 @@
       <section id="about-me" class="porfolio--text">
         <v-container>
           <h1>About me</h1>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique temporibus in quidem magnam. Vero dolores, commodi ratione quae dolorum impedit explicabo enim quis magni accusantium est omnis exercitationem voluptates. Iure?
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia laudantium enim, similique sapiente expedita veniam numquam pariatur, doloribus blanditiis quo, alias quasi at dolorum fugit sit debitis molestias officiis illum?
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora assumenda impedit iure est nulla, numquam veniam incidunt labore animi sint, tempore dolore asperiores optio enim distinctio rem reprehenderit deserunt! At!
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora, iusto? Tenetur quidem eum odit atque in repellendus voluptatem tempore, nostrum blanditiis id quis! Adipisci excepturi tempore pariatur, porro alias nulla!
-          </p>
+          <p></p>
         </v-container>
       </section>
       <section id="experience">
@@ -200,7 +195,7 @@ p {
   text-align: justify;
 }
 #profession {
-  margin-top: 350px;
+  margin-top: 400px;
 }
 #intro {
   align-content: center;
@@ -211,13 +206,14 @@ p {
   .master-sidebar {
     display: none;
   }
-}
-@media screen and (max-width: 955px) {
   .slaveSidebar {
     margin-left: 0px;
   }
   .triple-s {
     display: block;
+  }
+  #profession{
+    margin-top:350px;
   }
 }
 </style>
