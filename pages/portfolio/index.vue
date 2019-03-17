@@ -135,16 +135,7 @@ export default {
       breakpoint: ""
     };
   },
-  computed: {
-    breakpoint() {
-      this.breakpoint = this.$vuetify.breakpoint.name;
-      return (
-        this.breakpoint === "md" ||
-        this.breakpoint === "lg" ||
-        this.breakpoint === "xl"
-      );
-    }
-  }
+  computed: {}
 };
 </script>
 
