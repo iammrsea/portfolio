@@ -3,7 +3,7 @@
     <div class="master-sidebar hidden-xs-only">
       <div class="portfolio--text headline text-xs-center" primary-title>
         <nuxt-link to="/" tag="span" style="cursor:pointer">
-          <v-icon class="portfolio--text">arrow_back</v-icon>TripleS
+          <v-icon class="portfolio--text mb-1">arrow_back</v-icon>TripleS
         </nuxt-link>
       </div>
       <h1 class="text-md-center pa-3 portfolio--text display-2 mt-3">Mr SEA</h1>
@@ -22,18 +22,18 @@
           dark
           color="white--text"
           class="text-capitalize title font-weight-thin"
-          @click="$vuetify.goTo('#skills',options)"
+          @click="$vuetify.goTo('#experience',options)"
           flat
-        >Skill Sets</v-btn>
+        >Experience</v-btn>
       </div>
       <div class="work">
         <v-btn
           dark
           color="white--text"
           class="text-capitalize title font-weight-thin"
-          @click="$vuetify.goTo('#education',options)"
+          @click="$vuetify.goTo('#skills-education',options)"
           flat
-        >Education</v-btn>
+        >Skills and Education</v-btn>
       </div>
       <div class="work">
         <v-btn
@@ -57,8 +57,9 @@
             class="portfolio--text headline text-xs-center mt-3 ml-2 left triple-s"
             primary-title
           >
-            <v-icon class="portfolio--text mb-1">arrow_back</v-icon>
-            <nuxt-link to="/" tag="span" style="cursor:pointer">TripleS</nuxt-link>
+            <nuxt-link to="/" tag="span" style="cursor:pointer">
+              <v-icon class="portfolio--text mb-1">arrow_back</v-icon>TripleS
+            </nuxt-link>
           </div>
           <div id="profession">
             <span
@@ -86,11 +87,13 @@
           <v-layout row wrap justify-center>
             <v-flex xs12 sm7>
               <p class="white--text subheading pa-1 mt-1">
-                I am a JavaScript Full-Stack Developer. I am passionate and enthusiastic about any problems
-                relating to Software Engineering. I am not yet a JavaScript or Software expert, but I love to
-                read, code, learn and add to my skill sets everyday. I find it fulfilling proffering solutions
-                to software problems. I have worked with Java/Android, but I'm my interest is currently inclined
-                towards JavaScript.
+                I am a JavaScript Full-Stack Developer. I am passionate and
+                enthusiastic about any problems relating to Software
+                Engineering. I am not yet a JavaScript or Software expert, but I
+                love to read, code, learn and add to my skill sets everyday. I
+                find it fulfilling proffering solutions to software problems. I
+                have worked with Java/Android, but I'm my interest is currently
+                inclined towards JavaScript.
               </p>
             </v-flex>
             <v-flex xs12 sm5>
@@ -131,37 +134,41 @@
 
           <v-timeline :dense="breakpoint">
             <v-timeline-item v-for="(skill,i) in skills" :key="i" color="portfolio" small>
-              <!-- <template v-slot:opposite>
-                <span>Tus eu perfecto</span>
-              </template>-->
               <v-card class="elevation-2">
-                <v-card-title class="headline">{{skill}}</v-card-title>
+                <v-card-title class="headline">{{ skill }}</v-card-title>
+              </v-card>
+            </v-timeline-item>
+            <v-timeline-item color="portfolio" small>
+              <v-card class="elevation-2">
+                <v-card-title class="headline">Resume</v-card-title>
+                <v-card-title class="headline">
+                  <div>
+                    <v-btn @click="download">Download</v-btn>
+                  </div>
+                </v-card-title>
               </v-card>
             </v-timeline-item>
           </v-timeline>
-
-          <v-card class="elevation-2">
-            <v-card-title class="headline">Resume</v-card-title>
-            <v-card-title class="headline">
-              <div>
-                <a :href="require('@/assets/img/me2.jpg')" target="_blank">resume</a>
-                <a :href="require('@/assets/pdfs/CV.pdf')" target="_blank">resume</a>
-              </div>
-              <div>
-                <v-btn @click="download">Download</v-btn>
-              </div>
-            </v-card-title>
-          </v-card>
         </v-container>
       </section>
-      <section id="education">
+      <section id="skills-education">
         <v-container>
-          <h1>Education</h1>
+          <h1>Skills and Education</h1>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique temporibus in quidem magnam. Vero dolores, commodi ratione quae dolorum impedit explicabo enim quis magni accusantium est omnis exercitationem voluptates. Iure?
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia laudantium enim, similique sapiente expedita veniam numquam pariatur, doloribus blanditiis quo, alias quasi at dolorum fugit sit debitis molestias officiis illum?
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora assumenda impedit iure est nulla, numquam veniam incidunt labore animi sint, tempore dolore asperiores optio enim distinctio rem reprehenderit deserunt! At!
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora, iusto? Tenetur quidem eum odit atque in repellendus voluptatem tempore, nostrum blanditiis id quis! Adipisci excepturi tempore pariatur, porro alias nulla!
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique
+            temporibus in quidem magnam. Vero dolores, commodi ratione quae
+            dolorum impedit explicabo enim quis magni accusantium est omnis
+            exercitationem voluptates. Iure? Lorem ipsum dolor sit amet
+            consectetur adipisicing elit. Mollitia laudantium enim, similique
+            sapiente expedita veniam numquam pariatur, doloribus blanditiis quo,
+            alias quasi at dolorum fugit sit debitis molestias officiis illum?
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora
+            assumenda impedit iure est nulla, numquam veniam incidunt labore
+            animi sint, tempore dolore asperiores optio enim distinctio rem
+            reprehenderit deserunt! At! Lorem ipsum dolor sit amet, consectetur
+            adipisicing elit. Tempora, iusto? Tenetur quidem eum odit atque in
+            repellendus voluptatem tempore, nostrum blanditiis id quis! Adipisci
+            excepturi tempore pariatur, porro alias nulla!
           </p>
         </v-container>
       </section>
@@ -169,10 +176,20 @@
         <v-container>
           <h1>Contact</h1>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique temporibus in quidem magnam. Vero dolores, commodi ratione quae dolorum impedit explicabo enim quis magni accusantium est omnis exercitationem voluptates. Iure?
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia laudantium enim, similique sapiente expedita veniam numquam pariatur, doloribus blanditiis quo, alias quasi at dolorum fugit sit debitis molestias officiis illum?
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora assumenda impedit iure est nulla, numquam veniam incidunt labore animi sint, tempore dolore asperiores optio enim distinctio rem reprehenderit deserunt! At!
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora, iusto? Tenetur quidem eum odit atque in repellendus voluptatem tempore, nostrum blanditiis id quis! Adipisci excepturi tempore pariatur, porro alias nulla!
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique
+            temporibus in quidem magnam. Vero dolores, commodi ratione quae
+            dolorum impedit explicabo enim quis magni accusantium est omnis
+            exercitationem voluptates. Iure? Lorem ipsum dolor sit amet
+            consectetur adipisicing elit. Mollitia laudantium enim, similique
+            sapiente expedita veniam numquam pariatur, doloribus blanditiis quo,
+            alias quasi at dolorum fugit sit debitis molestias officiis illum?
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora
+            assumenda impedit iure est nulla, numquam veniam incidunt labore
+            animi sint, tempore dolore asperiores optio enim distinctio rem
+            reprehenderit deserunt! At! Lorem ipsum dolor sit amet, consectetur
+            adipisicing elit. Tempora, iusto? Tenetur quidem eum odit atque in
+            repellendus voluptatem tempore, nostrum blanditiis id quis! Adipisci
+            excepturi tempore pariatur, porro alias nulla!
           </p>
         </v-container>
       </section>
@@ -180,11 +197,7 @@
   </div>
 </template>
 <script>
-import pdf from "vue-pdf";
 export default {
-  components: {
-    pdf
-  },
   data() {
     return {
       options: {
@@ -192,6 +205,7 @@ export default {
         offset: -5,
         easing: "easeInOutCubic"
       },
+
       skills: [
         "Excellent understanding of object-oriented programming",
         "Excellent grasp of core concepts of Java and Android",
@@ -200,8 +214,7 @@ export default {
         "VueJs/NuxtJs, Vuetify, CSS, SASS, HTML 5, and Bootstrap 4",
         "JavaScript full-stack development",
         "Good knowledge of version control systems such as Git etc"
-      ],
-      file: "require('@/assets/pdfs/CV.pdf')"
+      ]
     };
   },
   computed: {
@@ -261,10 +274,6 @@ span.display-2 {
   font-size: 25px;
   padding: 5px;
   margin-right: 10px;
-  cursor: pointer;
-}
-.fab:hover {
-  background: gray;
 }
 
 #icons {
