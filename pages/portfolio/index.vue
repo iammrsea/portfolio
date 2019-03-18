@@ -57,9 +57,8 @@
             class="portfolio--text headline text-xs-center mt-3 ml-2 left triple-s"
             primary-title
           >
-            <nuxt-link to="/" tag="span" style="cursor:pointer">
-              <v-icon class="portfolio--text mb-1">arrow_back</v-icon>TripleS
-            </nuxt-link>
+            <v-icon class="portfolio--text mb-1">arrow_back</v-icon>
+            <nuxt-link to="/" tag="span" style="cursor:pointer">TripleS</nuxt-link>
           </div>
           <div id="profession">
             <span
