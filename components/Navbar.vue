@@ -87,8 +87,7 @@ export default {
   },
   methods: {
     cbt() {
-      window.location = "https://master-cbt.firebaseapp.com";
-      // this.$router.replace("https://master-cbt.firebaseapp.com");
+      window.open("https://master-cbt.firebaseapp.com", "_blank");
     }
   }
 };

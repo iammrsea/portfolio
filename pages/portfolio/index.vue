@@ -6,8 +6,16 @@
           <v-icon class="portfolio--text mb-1">arrow_back</v-icon>TripleS
         </nuxt-link>
       </div>
-      <h1 class="text-md-center pa-3 portfolio--text display-2 mt-3">Mr SEA</h1>
-      <p class="white--text text-xs-center display-1 my-3">Andrew Ekwugha Sopuruchi</p>
+      <h1
+        class="text-md-center pa-3 portfolio--text display-2 mt-3"
+        style="cursor:pointer"
+        @click="$vuetify.goTo('#intro',options)"
+      >Mr SEA</h1>
+      <p
+        class="white--text text-xs-center display-1 my-3"
+        style="cursor:pointer"
+        @click="$vuetify.goTo('#intro',options)"
+      >Andrew Ekwugha Sopuruchi</p>
       <div class="work">
         <v-btn
           dark
@@ -22,18 +30,18 @@
           dark
           color="white--text"
           class="text-capitalize title font-weight-thin"
-          @click="$vuetify.goTo('#experience',options)"
+          @click="$vuetify.goTo('#skills',options)"
           flat
-        >Experience</v-btn>
+        >Skill Sets</v-btn>
       </div>
       <div class="work">
         <v-btn
           dark
           color="white--text"
           class="text-capitalize title font-weight-thin"
-          @click="$vuetify.goTo('#skills-education',options)"
+          @click="$vuetify.goTo('#education',options)"
           flat
-        >Skills and Education</v-btn>
+        >Education</v-btn>
       </div>
       <div class="work">
         <v-btn
@@ -42,12 +50,13 @@
           class="text-capitalize title font-weight-thin"
           @click="$vuetify.goTo('#contact',options)"
           flat
-        >Contact</v-btn>
+        >Contact and Hire Me</v-btn>
       </div>
       <div id="icons">
-        <i class="fab fa-facebook"></i>
-        <i class="fab fa-facebook"></i>
-        <i class="far fa-envelope fab"></i>
+        <i class="fab fa-facebook" @click="facebook"></i>
+        <a href="mailto:ekwughaandrew@yahoo.com">
+          <i class="far fa-envelope fab"></i>
+        </a>
       </div>
     </div>
     <div class="slaveSidebar">
@@ -100,7 +109,6 @@
               <v-layout column>
                 <v-flex xs12>
                   <span class="mt-2" style="display:block">
-                    <!-- <i class="material-icons">place</i> -->
                     <v-icon class="portfolio--text pa-1 left ml-2 heading">place</v-icon>
                     <span class="portfolio--text pa-1 left heading text-uppercase">Location:</span>
                     <span class="white--text pa-1 left heading">Nigeria</span>
@@ -108,7 +116,6 @@
                 </v-flex>
                 <v-flex xs12>
                   <span class="mt-4" style="display:block">
-                    <!-- <i class="material-icons">place</i> -->
                     <v-icon class="portfolio--text pa-1 left ml-2 heading">email</v-icon>
                     <span class="portfolio--text pa-1 left heading text-uppercase">Email:</span>
                     <span class="white--text pa-1 left heading">Ekwughaandrew@gmail.com</span>
@@ -116,7 +123,6 @@
                 </v-flex>
                 <v-flex xs12>
                   <span class="mt-4" style="display:block">
-                    <!-- <i class="material-icons">place</i> -->
                     <v-icon class="portfolio--text pa-1 left ml-2 heading">phone</v-icon>
                     <span class="portfolio--text pa-1 left heading text-uppercase">Phone:</span>
                     <span class="white--text pa-1 left heading">+2347067859271</span>
@@ -125,7 +131,6 @@
               </v-layout>
             </v-flex>
           </v-layout>
-          <p></p>
         </v-container>
       </section>
       <section id="skills">
@@ -133,64 +138,104 @@
           <span class="text-uppercase headline portfolio--text">My Skill Sets</span>
 
           <v-timeline :dense="breakpoint">
-            <v-timeline-item v-for="(skill,i) in skills" :key="i" color="portfolio" small>
+            <v-timeline-item v-for="(skill,i) in skills" :key="i" color="portfolio" fill-dot small>
               <v-card class="elevation-2">
                 <v-card-title class="headline">{{ skill }}</v-card-title>
               </v-card>
             </v-timeline-item>
-            <v-timeline-item color="portfolio" small>
+            <v-timeline-item color="portfolio" small fill-dot>
               <v-card class="elevation-2">
-                <v-card-title class="headline">Resume</v-card-title>
-                <v-card-title class="headline">
-                  <div>
-                    <v-btn @click="download">Download</v-btn>
-                  </div>
-                </v-card-title>
+                <v-card-title class="headline font-weight-bold">My Resume</v-card-title>
+                <v-card-text class="headline">
+                  <p>Would you like to take a look at my resume?</p>
+                </v-card-text>
+                <v-card-actions>
+                  <v-spacer></v-spacer>
+                  <v-btn
+                    @click="download"
+                    class="headline text-capitalize"
+                    flat
+                    color="portfolio"
+                  >Download</v-btn>
+                </v-card-actions>
               </v-card>
             </v-timeline-item>
           </v-timeline>
         </v-container>
       </section>
-      <section id="skills-education">
+      <section id="education">
         <v-container>
-          <h1>Skills and Education</h1>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique
-            temporibus in quidem magnam. Vero dolores, commodi ratione quae
-            dolorum impedit explicabo enim quis magni accusantium est omnis
-            exercitationem voluptates. Iure? Lorem ipsum dolor sit amet
-            consectetur adipisicing elit. Mollitia laudantium enim, similique
-            sapiente expedita veniam numquam pariatur, doloribus blanditiis quo,
-            alias quasi at dolorum fugit sit debitis molestias officiis illum?
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora
-            assumenda impedit iure est nulla, numquam veniam incidunt labore
-            animi sint, tempore dolore asperiores optio enim distinctio rem
-            reprehenderit deserunt! At! Lorem ipsum dolor sit amet, consectetur
-            adipisicing elit. Tempora, iusto? Tenetur quidem eum odit atque in
-            repellendus voluptatem tempore, nostrum blanditiis id quis! Adipisci
-            excepturi tempore pariatur, porro alias nulla!
-          </p>
+          <span class="text-uppercase headline portfolio--text">Education</span>
+          <div>
+            <v-timeline :dense="breakpoint">
+              <v-timeline-item small fill-dot color="portfolio">
+                <template v-slot:opposite>
+                  <span class="portfolio--text subheading">2004-2010</span>
+                </template>
+                <v-card class="elevation-2" color="#424242" dark>
+                  <v-card-title class="subheading portfolio--text">
+                    <span>Modern Child College</span>
+                  </v-card-title>
+                  <v-card-text>
+                    <p>West African Examination Council (WAEC) Certificate</p>
+                  </v-card-text>
+                </v-card>
+              </v-timeline-item>
+              <v-timeline-item small fill-dot color="portfolio">
+                <template v-slot:opposite>
+                  <span class="portfolio--text subheading">2013-2018</span>
+                </template>
+                <v-card class="elevation-2" color="#424242" dark>
+                  <v-card-title class="subheading portfolio--text">
+                    <span>University of Uyo, Uyo</span>
+                  </v-card-title>
+                  <v-card-text>
+                    <p>Bachelor of Engineering</p>
+                    <p>Electrical/Electronic Engineering</p>
+                  </v-card-text>
+                </v-card>
+              </v-timeline-item>
+            </v-timeline>
+          </div>
         </v-container>
       </section>
       <section id="contact">
         <v-container>
-          <h1>Contact</h1>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique
-            temporibus in quidem magnam. Vero dolores, commodi ratione quae
-            dolorum impedit explicabo enim quis magni accusantium est omnis
-            exercitationem voluptates. Iure? Lorem ipsum dolor sit amet
-            consectetur adipisicing elit. Mollitia laudantium enim, similique
-            sapiente expedita veniam numquam pariatur, doloribus blanditiis quo,
-            alias quasi at dolorum fugit sit debitis molestias officiis illum?
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora
-            assumenda impedit iure est nulla, numquam veniam incidunt labore
-            animi sint, tempore dolore asperiores optio enim distinctio rem
-            reprehenderit deserunt! At! Lorem ipsum dolor sit amet, consectetur
-            adipisicing elit. Tempora, iusto? Tenetur quidem eum odit atque in
-            repellendus voluptatem tempore, nostrum blanditiis id quis! Adipisci
-            excepturi tempore pariatur, porro alias nulla!
-          </p>
+          <span class="text-uppercase headline portfolio--text">Hire Me</span>
+          <v-card class="hire-me ma-1 pa-2 subheading" flat>
+            <v-card-text>
+              Are you looking for a developer? Someone who is passionate and honest about
+              their job? Someone who prioritises client's satisfaction and who is willing
+              to learn new techonologies to get the job done within schedule? A freelancer
+              and a team player? Look no further, I am the right guy. Contact me and I would be
+              glad to work for you and/or with your team.
+            </v-card-text>
+            <v-card-actions>
+              <v-layout column>
+                <v-flex xs12>
+                  <span class="mt-2" style="display:block">
+                    <v-icon class="portfolio--text pa-1 left ml-2 heading">place</v-icon>
+                    <span class="portfolio--text pa-1 left heading text-uppercase">Location:</span>
+                    <span class="white--text pa-1 left heading">Uyo, Nigeria</span>
+                  </span>
+                </v-flex>
+                <v-flex xs12>
+                  <span class="mt-4" style="display:block">
+                    <v-icon class="portfolio--text pa-1 left ml-2 heading">email</v-icon>
+                    <span class="portfolio--text pa-1 left heading text-uppercase">Email:</span>
+                    <span class="white--text pa-1 left heading">Ekwughaandrew@gmail.com</span>
+                  </span>
+                </v-flex>
+                <v-flex xs12>
+                  <span class="mt-4" style="display:block">
+                    <v-icon class="portfolio--text pa-1 left ml-2 heading">phone</v-icon>
+                    <span class="portfolio--text pa-1 left heading text-uppercase">Phone:</span>
+                    <span class="white--text pa-1 left heading">+2347067859271</span>
+                  </span>
+                </v-flex>
+              </v-layout>
+            </v-card-actions>
+          </v-card>
         </v-container>
       </section>
     </div>
@@ -226,6 +271,9 @@ export default {
   methods: {
     download() {
       window.open(require("@/assets/pdfs/CV.pdf"), "_blank");
+    },
+    facebook() {
+      window.open("https://www.facebook.com/ekwughaandrew", "_blank");
     }
   }
 };
@@ -272,8 +320,11 @@ span.display-2 {
 .fab {
   color: white;
   font-size: 25px;
-  padding: 5px;
-  margin-right: 10px;
+  padding: 15px;
+  margin-right: 5px;
+}
+.fab:hover {
+  background: #424242;
 }
 
 #icons {
@@ -298,6 +349,15 @@ p {
   align-content: center;
   text-align: center;
   color: #fff;
+}
+.hire-me {
+  background: #424242;
+  width: 100%;
+  color: #fff;
+  text-align: justify;
+}
+#contact {
+  background: #424242;
 }
 @media screen and (max-width: 955px) {
   .master-sidebar {
