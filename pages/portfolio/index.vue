@@ -1,10 +1,12 @@
 <template>
   <div class="card">
     <div class="master-sidebar hidden-xs-only">
-      <div class="porfolio--text headline text-xs-center" primary-title>
-        <nuxt-link to="/" tag="span" style="cursor:pointer">TripleS</nuxt-link>
+      <div class="portfolio--text headline text-xs-center" primary-title>
+        <nuxt-link to="/" tag="span" style="cursor:pointer">
+          <v-icon class="portfolio--text">arrow_back</v-icon>TripleS
+        </nuxt-link>
       </div>
-      <h1 class="text-md-center pa-3 porfolio--text display-2 mt-3">Mr SEA</h1>
+      <h1 class="text-md-center pa-3 portfolio--text display-2 mt-3">Mr SEA</h1>
       <p class="white--text text-xs-center display-1 my-3">Andrew Ekwugha Sopuruchi</p>
       <div class="work">
         <v-btn
@@ -20,18 +22,18 @@
           dark
           color="white--text"
           class="text-capitalize title font-weight-thin"
-          @click="$vuetify.goTo('#experience',options)"
+          @click="$vuetify.goTo('#skills',options)"
           flat
-        >Experience</v-btn>
+        >Skill Sets</v-btn>
       </div>
       <div class="work">
         <v-btn
           dark
           color="white--text"
           class="text-capitalize title font-weight-thin"
-          @click="$vuetify.goTo('#skills-education',options)"
+          @click="$vuetify.goTo('#education',options)"
           flat
-        >Skills and Education</v-btn>
+        >Education</v-btn>
       </div>
       <div class="work">
         <v-btn
@@ -51,25 +53,30 @@
     <div class="slaveSidebar">
       <section id="intro">
         <v-img :src="require('@/assets/img/wall2.jpg')" height="600" id="wall">
-          <div class="porfolio--text headline text-xs-center mt-3 ml-2 left triple-s" primary-title>
-            <nuxt-link to="/" tag="span" style="cursor:pointer">TripleS</nuxt-link>
+          <div
+            class="portfolio--text headline text-xs-center mt-3 ml-2 left triple-s"
+            primary-title
+          >
+            <nuxt-link to="/" tag="span" style="cursor:pointer">
+              <v-icon class="portfolio--text mb-1">arrow_back</v-icon>TripleS
+            </nuxt-link>
           </div>
           <div id="profession">
             <span
               class="display-2 text-uppercase text-xs-right text-md-right mr-5 font-weight-bold"
             >Andrew Ekwugha</span>
             <span
-              class="display-2 porfolio--text text-uppercase text-xs-right text-md-right mr-5 mt-4 font-weight-bold"
+              class="display-2 portfolio--text text-uppercase text-xs-right text-md-right mr-5 mt-4 font-weight-bold"
             >JavaScript</span>
             <span
-              class="display-2 porfolio--text text-uppercase text-xs-right text-md-right mt-2 mr-5 font-weight-bold"
+              class="display-2 portfolio--text text-uppercase text-xs-right text-md-right mt-2 mr-5 font-weight-bold"
             >Developer</span>
           </div>
         </v-img>
       </section>
       <section id="about-me" class>
         <v-container>
-          <span class="text-uppercase headline porfolio--text">About Me</span>
+          <span class="text-uppercase headline portfolio--text">About Me</span>
           <v-layout justify-center class="mt-4">
             <v-flex xs12>
               <v-avatar size="200px">
@@ -92,24 +99,24 @@
                 <v-flex xs12>
                   <span class="mt-2" style="display:block">
                     <!-- <i class="material-icons">place</i> -->
-                    <v-icon class="porfolio--text pa-1 left ml-2 heading">place</v-icon>
-                    <span class="porfolio--text pa-1 left heading text-uppercase">Location:</span>
+                    <v-icon class="portfolio--text pa-1 left ml-2 heading">place</v-icon>
+                    <span class="portfolio--text pa-1 left heading text-uppercase">Location:</span>
                     <span class="white--text pa-1 left heading">Nigeria</span>
                   </span>
                 </v-flex>
                 <v-flex xs12>
                   <span class="mt-4" style="display:block">
                     <!-- <i class="material-icons">place</i> -->
-                    <v-icon class="porfolio--text pa-1 left ml-2 heading">email</v-icon>
-                    <span class="porfolio--text pa-1 left heading text-uppercase">Email:</span>
+                    <v-icon class="portfolio--text pa-1 left ml-2 heading">email</v-icon>
+                    <span class="portfolio--text pa-1 left heading text-uppercase">Email:</span>
                     <span class="white--text pa-1 left heading">Ekwughaandrew@gmail.com</span>
                   </span>
                 </v-flex>
                 <v-flex xs12>
                   <span class="mt-4" style="display:block">
                     <!-- <i class="material-icons">place</i> -->
-                    <v-icon class="porfolio--text pa-1 left ml-2 heading">phone</v-icon>
-                    <span class="porfolio--text pa-1 left heading text-uppercase">Phone:</span>
+                    <v-icon class="portfolio--text pa-1 left ml-2 heading">phone</v-icon>
+                    <span class="portfolio--text pa-1 left heading text-uppercase">Phone:</span>
                     <span class="white--text pa-1 left heading">+2347067859271</span>
                   </span>
                 </v-flex>
@@ -119,20 +126,38 @@
           <p></p>
         </v-container>
       </section>
-      <section id="experience">
+      <section id="skills">
         <v-container>
-          <h1>Experience</h1>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique temporibus in quidem magnam. Vero dolores, commodi ratione quae dolorum impedit explicabo enim quis magni accusantium est omnis exercitationem voluptates. Iure?
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia laudantium enim, similique sapiente expedita veniam numquam pariatur, doloribus blanditiis quo, alias quasi at dolorum fugit sit debitis molestias officiis illum?
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora assumenda impedit iure est nulla, numquam veniam incidunt labore animi sint, tempore dolore asperiores optio enim distinctio rem reprehenderit deserunt! At!
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora, iusto? Tenetur quidem eum odit atque in repellendus voluptatem tempore, nostrum blanditiis id quis! Adipisci excepturi tempore pariatur, porro alias nulla!
-          </p>
+          <span class="text-uppercase headline portfolio--text">My Skill Sets</span>
+
+          <v-timeline :dense="breakpoint">
+            <v-timeline-item v-for="(skill,i) in skills" :key="i" color="portfolio" small>
+              <!-- <template v-slot:opposite>
+                <span>Tus eu perfecto</span>
+              </template>-->
+              <v-card class="elevation-2">
+                <v-card-title class="headline">{{skill}}</v-card-title>
+              </v-card>
+            </v-timeline-item>
+          </v-timeline>
+
+          <v-card class="elevation-2">
+            <v-card-title class="headline">Resume</v-card-title>
+            <v-card-title class="headline">
+              <div>
+                <a :href="require('@/assets/img/me2.jpg')" target="_blank">resume</a>
+                <a :href="require('@/assets/pdfs/CV.pdf')" target="_blank">resume</a>
+              </div>
+              <div>
+                <v-btn @click="download">Download</v-btn>
+              </div>
+            </v-card-title>
+          </v-card>
         </v-container>
       </section>
-      <section id="skills-education">
+      <section id="education">
         <v-container>
-          <h1>Skills and Education</h1>
+          <h1>Education</h1>
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique temporibus in quidem magnam. Vero dolores, commodi ratione quae dolorum impedit explicabo enim quis magni accusantium est omnis exercitationem voluptates. Iure?
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia laudantium enim, similique sapiente expedita veniam numquam pariatur, doloribus blanditiis quo, alias quasi at dolorum fugit sit debitis molestias officiis illum?
@@ -152,20 +177,15 @@
           </p>
         </v-container>
       </section>
-
-      <!-- <div class="about">
-              <v-avatar size="200px">
-                <img :src="require('@/assets/img/me2.jpg')" alt="Andrew">
-              </v-avatar>
-              <p
-                class="text-xs-center"
-              >Lorem ipsum, dolor sit amet consectetur adipisicing elit. Labore minima dolorem molestiae sint facilis quis, architecto a veniam illo possimus quod assumenda animi iure totam eos, officiis adipisci porro velit.</p>
-      </div>-->
     </div>
   </div>
 </template>
 <script>
+import pdf from "vue-pdf";
 export default {
+  components: {
+    pdf
+  },
   data() {
     return {
       options: {
@@ -173,10 +193,29 @@ export default {
         offset: -5,
         easing: "easeInOutCubic"
       },
-      breakpoint: ""
+      skills: [
+        "Excellent understanding of object-oriented programming",
+        "Excellent grasp of core concepts of Java and Android",
+        "Excellent knowledge of object-oriented JavaScript",
+        "Excellent understanding of NodeJs, ExpressJs and MongoDb",
+        "VueJs/NuxtJs, Vuetify, CSS, SASS, HTML 5, and Bootstrap 4",
+        "JavaScript full-stack development",
+        "Good knowledge of version control systems such as Git etc"
+      ],
+      file: "require('@/assets/pdfs/CV.pdf')"
     };
   },
-  computed: {}
+  computed: {
+    breakpoint() {
+      // console.log(this.$vuetify.breakpoint.smAndUp);
+      return !this.$vuetify.breakpoint.smAndUp;
+    }
+  },
+  methods: {
+    download() {
+      window.open(require("@/assets/pdfs/CV.pdf"), "_blank");
+    }
+  }
 };
 </script>
 
@@ -223,6 +262,10 @@ span.display-2 {
   font-size: 25px;
   padding: 5px;
   margin-right: 10px;
+  cursor: pointer;
+}
+.fab:hover {
+  background: gray;
 }
 
 #icons {

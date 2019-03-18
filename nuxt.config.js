@@ -74,6 +74,15 @@ export default {
     /*
      ** You can extend webpack config here
      */
-    extend(config, ctx) {}
+    extend(config, ctx) {
+      const assetsLoader = config.module.rules.find(rule =>
+        rule.test.test(".png")
+      );
+
+      // Overwrite the test regex and add `pdf`
+      assetsLoader.test = /\.(png|jpe?g|gif|svg|webp|pdf)$/i;
+
+      return config;
+    }
   }
 };
