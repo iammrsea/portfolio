@@ -18,8 +18,8 @@
       <v-spacer/>
       <div class="hidden-xs-only">
         <v-btn flat class to="/">HOME</v-btn>
-        <v-btn flat class to="/blog">BLOG</v-btn>
         <v-btn flat class to="/portfolio">PORTFOLIO</v-btn>
+        <v-btn flat class to="/blog">BLOG</v-btn>
         <v-btn flat class @click="cbt">JAMB CBT</v-btn>
       </div>
     </v-toolbar>

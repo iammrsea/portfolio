@@ -2,11 +2,20 @@
   <v-app v-scroll="onScroll">
     <section v-if="$route.path==='/'">
       <Navbar :isTransparent="isTransparent" :dark="dark"/>
-      <v-img
-        :src="require('@/assets/img/adventurealtitude.jpg')"
-        min-height="100"
-        style="height:100%"
-      ></v-img>
+      <v-img :src="require('@/assets/img/section.jpg')" min-height="100" style="height:100%">
+        <v-container>
+          <div id="showcase">
+            <h1
+              class="heading hidden-md-and-up text-uppercase"
+            >Welcome to my awesome online office and platform</h1>
+          </div>
+          <div id="showcase-lg">
+            <p
+              class="display-1 hidden-sm-and-down text-uppercase"
+            >Welcome to my awesome online office and platform</p>
+          </div>
+        </v-container>
+      </v-img>
     </section>
     <section v-else-if="$route.path==='/blog'">
       <Navbar :isTransparent="isTransparent" :dark="dark"/>
@@ -73,5 +82,15 @@ export default {
 
 body {
   background: #fff;
+}
+#showcase {
+  margin-top: 20%;
+  text-align: justify;
+  color: #fff;
+}
+#showcase-lg {
+  margin-top: 35%;
+  text-align: justify;
+  color: #fff;
 }
 </style>

@@ -88,9 +88,7 @@
           <span class="text-uppercase headline portfolio--text">About Me</span>
           <v-layout justify-center class="mt-4">
             <v-flex xs12>
-              <v-avatar size="200px">
-                <img :src="require('@/assets/img/me2.jpg')" alt="Andrew">
-              </v-avatar>
+              <img :src="require('@/assets/img/me2.jpg')" height="400" alt="Andrew">
             </v-flex>
           </v-layout>
           <v-layout row wrap justify-center>
@@ -238,6 +236,13 @@
           </v-card>
         </v-container>
       </section>
+      <v-layout justify-center align-center class="mt-2">
+        <v-flex xs12>
+          <section>
+            <img :src="require('@/assets/img/bottom.jpg')" height="400" alt="Andrew">
+          </section>
+        </v-flex>
+      </v-layout>
     </div>
   </div>
 </template>
