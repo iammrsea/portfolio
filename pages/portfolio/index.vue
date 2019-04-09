@@ -264,7 +264,8 @@ export default {
         "VueJs/NuxtJs, Vuetify, CSS, SASS, HTML 5, and Bootstrap 4",
         "JavaScript full-stack development",
         "Good knowledge of version control systems such as Git etc"
-      ]
+      ],
+      title: " portofolio"
     };
   },
   computed: {
@@ -279,6 +280,25 @@ export default {
     },
     facebook() {
       window.open("https://www.facebook.com/ekwughaandrew", "_blank");
+    },
+    head() {
+      return {
+        title: this.title,
+        meta: [
+          {
+            hid: "description",
+            name: "description",
+            content: "A software developer"
+          }
+          // { hid: "author", name: "author", conten: "Andrew Ekwugha" },
+          // {
+          //   hid: "keywords",
+          //   name: "keywords",
+          //   content:
+          //     "Software engineer, Software developer, Web developer, Android developer"
+          // }
+        ]
+      };
     }
   }
 };

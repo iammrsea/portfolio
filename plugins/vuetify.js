@@ -1,6 +1,7 @@
 import Vue from "vue";
 import Vuetify from "vuetify/lib";
 import colors from "vuetify/es5/util/colors";
+import "@fortawesome/fontawesome-free/css/all.css";
 
 Vue.use(Vuetify, {
   theme: {
@@ -12,5 +13,6 @@ Vue.use(Vuetify, {
     error: colors.deepOrange.accent4,
     success: colors.green.accent3,
     portfolio: colors.amber
-  }
+  },
+  iconfont: "fa"
 });

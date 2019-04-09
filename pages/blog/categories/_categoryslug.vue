@@ -3,8 +3,8 @@
     <v-flex xs12 sm7>
       <v-layout column>
         <v-flex xs12>Blog posts for a particular category</v-flex>
-        <v-flex xs12 v-for="item in 2" :key="item">
-          <post-preview></post-preview>
+        <v-flex v-for="(post,i) in posts" :key="i">
+          <post-preview :post="post"></post-preview>
         </v-flex>
       </v-layout>
     </v-flex>
@@ -17,10 +17,26 @@
 <script>
 import PostPreview from "@/components/blog/PostPreview";
 import Categories from "@/components/blog/Categories";
+
 export default {
   components: {
     PostPreview,
     Categories
+  },
+  data() {
+    return {};
+  },
+  computed: {
+    param() {
+      return this.$route.params;
+    }
+  },
+  computed: {
+    posts() {
+      return this.$store.getters["blog/postsByCategory"](
+        this.$route.params.categoryslug
+      );
+    }
   }
 };
 </script>

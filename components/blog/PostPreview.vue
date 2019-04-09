@@ -3,8 +3,12 @@
     <v-img src="https://cdn.vuetifyjs.com/images/cards/desert.jpg" aspect-ratio="2.75"></v-img>
     <v-card-title primary-title>
       <div>
-        <h3 class="headline mb-0">Post title</h3>
-        <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam, quod tempore ipsa cumque deleniti animi? Cupiditate dolore officia id amet numquam earum culpa sapiente dicta ut. Earum corrupti quisquam eligendi!</div>
+        <h3 class="headline mb-0">{{post.title}}</h3>
+        <h4>Written by {{post.author}}</h4>
+        <p>Date {{post.date}}</p>
+        <div>
+          <p>{{post.description}}</p>
+        </div>
       </div>
     </v-card-title>
     <v-card-actions>
@@ -15,9 +19,16 @@
 </template>
 <script>
 export default {
+  props: {
+    post: {
+      type: Object,
+      required: true
+    }
+  },
   methods: {
     postDetail() {
-      this.$router.push("/blog/ee8e0e8e");
+      this.$router.push(`/blog/${this.post.slug}`);
+      // this.$router.push(`${this.$route.path}/${this.post.slug}`);
     }
   }
 };

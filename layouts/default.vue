@@ -5,14 +5,18 @@
       <v-img :src="require('@/assets/img/section.jpg')" min-height="100" style="height:100%">
         <v-container>
           <div id="showcase">
-            <h1
-              class="heading hidden-md-and-up text-uppercase"
-            >Welcome to my awesome online office and platform</h1>
+            <marquee>
+              <h1
+                class="heading hidden-md-and-up text-uppercase"
+              >Welcome to my awesome online office and platform</h1>
+            </marquee>
           </div>
           <div id="showcase-lg">
-            <p
-              class="display-1 hidden-sm-and-down text-uppercase"
-            >Welcome to my awesome online office and platform</p>
+            <marquee>
+              <h1
+                class="display-1 hidden-sm-and-down text-uppercase"
+              >Welcome to my awesome online office and platform</h1>
+            </marquee>
           </div>
         </v-container>
       </v-img>
@@ -34,10 +38,6 @@
     <v-content>
       <nuxt/>
     </v-content>
-
-    <!-- <v-footer>
-      <span class="text-xs-center">&copy; 2019</span>
-    </v-footer>-->
   </v-app>
 </template>
 
@@ -89,7 +89,7 @@ body {
   color: #fff;
 }
 #showcase-lg {
-  margin-top: 35%;
+  margin-top: 10%;
   text-align: justify;
   color: #fff;
 }

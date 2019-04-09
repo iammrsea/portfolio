@@ -5,9 +5,9 @@
     <v-card-text>
       <v-divider></v-divider>
       <v-list>
-        <div v-for="category in 4" :key="category">
-          <v-list-tile @click="nothing">
-            <v-list-tile-content>Category {{category}}</v-list-tile-content>
+        <div v-for="(category,i) in categories" :key="i">
+          <v-list-tile @click="nothing(category.toLowerCase())">
+            <v-list-tile-content>{{category}}</v-list-tile-content>
           </v-list-tile>
           <v-divider></v-divider>
         </div>
@@ -18,8 +18,13 @@
 <script>
 export default {
   methods: {
-    nothing() {
-      this.$router.push("/blog/categories/technology");
+    nothing(category) {
+      this.$router.push(`/blog/categories/${category}`);
+    }
+  },
+  computed: {
+    categories() {
+      return this.$store.getters["blog/categories"];
     }
   }
 };

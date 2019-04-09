@@ -8,9 +8,10 @@
               <span class="text-uppercase headline portfolio--text">About Me</span>
               <v-layout justify-center class="mt-4">
                 <v-flex xs12>
-                  <v-avatar size="300px">
+                  <!-- <v-avatar size="300px">
                     <img :src="require('@/assets/img/me.jpg')" alt="Andrew">
-                  </v-avatar>
+                  </v-avatar>-->
+                  <v-img :src="require('@/assets/img/second.png')"></v-img>
                 </v-flex>
               </v-layout>
               <v-layout row wrap justify-center>
@@ -90,13 +91,26 @@
 export default {
   data() {
     return {
-      buttonNav: "home"
+      buttonNav: "home",
+      title: ""
     };
   },
   methods: {
     cbt() {
       window.open("https://master-cbt.firebaseapp.com", "_blank");
     }
+  },
+  head() {
+    return {
+      title: "This is my custom title",
+      meta: [
+        {
+          hid: "description",
+          name: "description",
+          content: "This is my custom description"
+        }
+      ]
+    };
   }
 };
 </script>
