@@ -11,16 +11,19 @@
 <script>
 import PostDetail from "@/components/blog/PostDetail";
 import DynamicPost from "@/components/DynamicPost.vue";
+import manifest from "../../manifest.json";
+
 export default {
   components: {
     DynamicPost
   },
 
   computed: {
-    post() {
-      return this.$store.getters["blog/postBySlug"](
-        this.$route.params.postslug
-      );
+    async asyncData({ params }) {
+      let postInfo = manifest.find(post => post.slug === params.postslug);
+
+      let post = await import(`@/content/${post.url}`);
+      return { post };
     }
   },
   methods: {
@@ -29,7 +32,7 @@ export default {
     }
   },
   mounted() {
-    this.$injectedFunction();
+    //this.$injectedFunction();
   }
 };
 </script>

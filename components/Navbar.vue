@@ -19,7 +19,7 @@
       <div class="hidden-xs-only">
         <v-btn flat class to="/">HOME</v-btn>
         <v-btn flat class to="/portfolio">PORTFOLIO</v-btn>
-        <v-btn flat class to="/blog/1">BLOG</v-btn>
+        <v-btn flat class :to="{path:'/blog',query:{page:1}}">BLOG</v-btn>
         <v-btn flat class @click="cbt">JAMB CBT</v-btn>
       </div>
     </v-toolbar>
@@ -80,7 +80,7 @@ export default {
         {
           icon: "bubble_chart",
           title: "BLOG",
-          to: "/blog"
+          to: "{path:'/blog',query:{page:1}}"
         }
       ]
     };

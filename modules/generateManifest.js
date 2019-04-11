@@ -25,7 +25,7 @@ export default function generate(moduleOptions = {}) {
     });
     this.nuxt.hook("build:done", () => {
       console.log("This is after build hook");
-      writeFile("static/manifest.json", JSON.stringify(listOfPosts), e => {
+      writeFile("./manifest.json", JSON.stringify(listOfPosts), e => {
         if (e) {
           console.log(e);
         }
