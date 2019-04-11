@@ -27,12 +27,10 @@ export default {
   },
   methods: {
     postDetail() {
-      console.log(this.$route.path.split("/"));
       if (this.$route.path.split("/").length === 3) {
-        console.log(`${this.$route.path}/${this.post.slug}`);
+        // console.log(`${this.$route.path}/${this.post.slug}`);
         this.$router.push(`${this.$route.path}/${this.post.slug}`);
       } else {
-        console.log("nothing");
         this.$router.push(`/blog/${this.post.slug}`);
       }
 

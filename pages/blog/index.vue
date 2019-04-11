@@ -49,7 +49,7 @@ export default {
     for (let i = 0; i < manifest.length; i++) {
       let url = manifest[i].url;
       let post = await import(`@/content/${url}`);
-      posts.push(post.default);
+      posts.push(post);
     }
 
     return { pageNumber, posts };

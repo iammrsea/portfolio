@@ -1,3 +1,5 @@
+import Vue from "vue";
 export default function({ from }) {
-  console.log(from);
+  Vue.prototype.$myQuery = from.query;
+  Vue.prototype.$myPath = from.fullPath;
 }

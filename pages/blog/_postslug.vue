@@ -14,25 +14,25 @@ import DynamicPost from "@/components/DynamicPost.vue";
 import manifest from "../../manifest.json";
 
 export default {
+  middleware: ["retrieveQuery"],
   components: {
     DynamicPost
   },
 
-  computed: {
-    async asyncData({ params }) {
-      let postInfo = manifest.find(post => post.slug === params.postslug);
+  async asyncData({ params }) {
+    let postInfo = manifest.find(post => post.slug === params.postslug);
 
-      let post = await import(`@/content/${post.url}`);
-      return { post };
-    }
+    let post = await import(`@/content/${postInfo.url}`);
+    return { post };
   },
   methods: {
     previous() {
-      this.$router.push("/blog");
+      if (!this.$myQuery.page) {
+        this.$router.push(this.$myPath);
+        return;
+      }
+      this.$router.push({ path: "/blog", query: this.$myQuery });
     }
-  },
-  mounted() {
-    //this.$injectedFunction();
   }
 };
 </script>

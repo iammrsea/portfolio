@@ -4,7 +4,7 @@
       <v-layout column>
         <v-flex xs12>Blog posts for a particular category</v-flex>
         <v-flex v-for="(post,i) in posts" :key="i">
-          <post-preview :post="post"></post-preview>
+          <post-preview :post="post.attributes"></post-preview>
         </v-flex>
       </v-layout>
     </v-flex>
@@ -17,11 +17,24 @@
 <script>
 import PostPreview from "@/components/blog/PostPreview";
 import Categories from "@/components/blog/Categories";
+import manifest from "@/manifest";
 
 export default {
   components: {
     PostPreview,
     Categories
+  },
+  async asyncData({ params }) {
+    let posts = [];
+    for (let i = 0; i < manifest.length; i++) {
+      if (manifest[i].category === params.categoryslug) {
+        let url = manifest[i].url;
+        let post = await import(`@/content/${url}`);
+        posts.push(post);
+      }
+    }
+    console.log(posts);
+    return { posts };
   },
   data() {
     return {};
@@ -32,11 +45,11 @@ export default {
     }
   },
   computed: {
-    posts() {
-      return this.$store.getters["blog/postsByCategory"](
-        this.$route.params.categoryslug
-      );
-    }
+    // posts() {
+    //   return this.$store.getters["blog/postsByCategory"](
+    //     this.$route.params.categoryslug
+    //   );
+    // }
   }
 };
 </script>
