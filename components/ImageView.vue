@@ -1,12 +1,20 @@
 <template>
-  <v-img :src="src"></v-img>
+  <v-img :src="imageSource"></v-img>
 </template>
 <script>
 export default {
   props: {
-    src: String,
+    name: {
+      type: String,
+      required: true
+    },
     height: Number,
     width: Number
+  },
+  computed: {
+    imageSource() {
+      return require(`@/assets/img/${this.name}`);
+    }
   }
 };
 </script>

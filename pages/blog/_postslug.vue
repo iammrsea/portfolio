@@ -5,7 +5,10 @@
       <span class="text-capitalize">Go Back</span>
     </v-btn>
     <h2>{{post.attributes.title}}</h2>
-    <dynamic-post :renderFunc="post.vue.render" :staticRenderFuncs="post.vue.staticRenderFns"></dynamic-post>
+    <dynamic-post
+      :renderFunc="post.default.vue.render"
+      :staticRenderFuncs="post.default.vue.staticRenderFns"
+    ></dynamic-post>
   </v-container>
 </template>
 <script>

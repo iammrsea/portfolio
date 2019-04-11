@@ -9,11 +9,9 @@ time: 10:47PM
 slug: first-post
 ---
 
-
 Evan You, the creator of Vue, introduced [VuePress](https://vuepress.vuejs.org/) just a couple months ago. I was excited about the announcement because it seemed to be exactly what I was looking for at the time: a minimalist, optimized, content-first static site generator that trivializes the process of fusing together markdown assets with dynamic layouts and components. I read through the docs and tried it out.
 
-<ImageView
-src="/_nuxt/assets/img/bottom.jpg"/>
+<image-view name='bottom.jpg'></image-view>
 
 ![Markdown Logo](https://markdown-here.com/img/icon256.png)
 
@@ -27,11 +25,7 @@ function print() {
 npm install
 ```
 
-<ImageView
-src="/_nuxt/assets/img/blog3.jpg"/>
-
-<image-view
-src='/_nuxt/assets/img/blog3.jpg'><image-view>
+<image-view name = 'blog3.jpg'><image-view>
 
 ```java
 class Animal{

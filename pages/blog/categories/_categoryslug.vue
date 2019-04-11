@@ -33,7 +33,6 @@ export default {
         posts.push(post);
       }
     }
-    console.log(posts);
     return { posts };
   },
   data() {
