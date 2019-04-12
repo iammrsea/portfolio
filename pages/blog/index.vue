@@ -58,8 +58,10 @@ export default {
       posts.push(post);
     }
 
-    posts.sort((first, second) => {
-      return getTime(first.date) - getTime(second.date);
+    posts.sort((firstPost, secondPost) => {
+      return (
+        getTime(firstPost.attributes.date) - getTime(secondPost.attributes.date)
+      );
     });
     return { pageNumber, posts };
   },
