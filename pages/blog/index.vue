@@ -46,12 +46,21 @@ export default {
   async asyncData({ query }) {
     let pageNumber = +query.page || 1;
     let posts = [];
+
+    function getTime(date) {
+      let time = new Date(date);
+      return time.getTime();
+    }
+
     for (let i = 0; i < manifest.length; i++) {
       let url = manifest[i].url;
       let post = await import(`@/content/${url}`);
       posts.push(post);
     }
 
+    posts.sort((first, second) => {
+      return getTime(first.date) - getTime(second.date);
+    });
     return { pageNumber, posts };
   },
   created() {},

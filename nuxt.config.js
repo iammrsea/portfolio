@@ -1,6 +1,7 @@
 import VuetifyLoaderPlugin from "vuetify-loader/lib/plugin";
 import pkg from "./package";
 const path = require("path");
+import manifest from "./manifest.json";
 
 export default {
   mode: "universal",
@@ -105,5 +106,14 @@ export default {
       // console.log(config);
       return config;
     }
+  },
+  generate: {
+    routes: []
+      .concat(manifest.map(postMeta => `/blog/${postMeta.slug}`))
+      .concat(
+        ["technolog", "education"].map(
+          category => `/blog/categories/${category}`
+        )
+      )
   }
 };

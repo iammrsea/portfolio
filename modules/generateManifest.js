@@ -8,7 +8,7 @@ const promisifiedStat = promisify(fs.stat);
 const writeFile = fs.writeFile;
 
 export default function generate(moduleOptions = {}) {
-  console.log(moduleOptions);
+  console.log("module running...");
   let listOfPosts = [];
   let options = Object.assign({}, moduleOptions);
 
@@ -20,25 +20,23 @@ export default function generate(moduleOptions = {}) {
     console.warn("Invalid Option: Please provide a directory name");
   } else {
     this.nuxt.hook("build:before", () => {
-      console.log("This is before build hook");
       readFiles(options.entryDirectory);
     });
     this.nuxt.hook("build:done", () => {
-      console.log("This is after build hook");
       writeFile("./manifest.json", JSON.stringify(listOfPosts), e => {
         if (e) {
           console.log(e);
         }
       });
-      console.log(listOfPosts);
+      // console.log(listOfPosts);
     });
   }
 
   async function readFiles(entryDirectory) {
     try {
       let files = await promisifiedReaddir(entryDirectory);
-      console.log("files");
-      console.log(files);
+      // console.log("files");
+      // console.log(files);
 
       for (let i = 0; i < files.length; i++) {
         let newPath = path.resolve(entryDirectory, files[i]);
@@ -48,14 +46,13 @@ export default function generate(moduleOptions = {}) {
           readFiles(newPath);
         } else {
           let data = await promisifiedReadFile(newPath, "utf8");
-
           let attributes = fm(data).attributes;
           let pathInfo = retrievePath(newPath, options.entryDirectory);
-
           let jsonObj = {
             url: pathInfo.url,
             slug: `${attributes.slug}`,
-            category: pathInfo.group
+            category: pathInfo.group,
+            date: attributes.date
           };
           listOfPosts.push(jsonObj);
         }
