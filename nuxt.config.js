@@ -111,7 +111,7 @@ export default {
     routes: []
       .concat(manifest.map(postMeta => `/blog/${postMeta.slug}`))
       .concat(
-        ["technolog", "education"].map(
+        ["technology", "education"].map(
           category => `/blog/categories/${category}`
         )
       )
