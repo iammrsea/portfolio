@@ -30,11 +30,13 @@ export default {
   },
   methods: {
     previous() {
-      if (!this.$myQuery.page) {
+      if (!this.$myQuery) {
         this.$router.push(this.$myPath);
-        return;
+      } else if (this.$myQuery && this.$myPath) {
+        this.$router.push({ path: "/blog", query: this.$myQuery });
+      } else {
+        this.$router.push("/blog");
       }
-      this.$router.push({ path: "/blog", query: this.$myQuery });
     }
   }
 };

@@ -1,10 +1,10 @@
 <template>
-  <v-card id="blog">
+  <v-card id="blog" dark class>
     <v-container>
       <v-layout row wrap>
         <v-flex xs12 sm7>
           <v-layout column>
-            <v-flex xs12 class="headline">Blog posts</v-flex>
+            <v-flex xs12 class="headline white--text text-capitalize article-title">Blog posts</v-flex>
             <v-flex xs12 v-for="(post,i) in paginatedPosts" :key="i">
               <post-preview :post="post.attributes"></post-preview>
             </v-flex>
@@ -14,14 +14,14 @@
               <v-flex xs12>
                 <v-card flat>
                   <v-card-text>
-                    <v-pagination v-model="pageNumber" :length="pageCount"></v-pagination>
+                    <v-pagination v-model="pageNumber" :length="pageCount" color="background"></v-pagination>
                   </v-card-text>
                 </v-card>
               </v-flex>
             </v-layout>
           </div>
         </v-flex>
-        <v-flex sm5 class="hidden-xs-only">
+        <v-flex sm5 class="hidden-xs-only mt-4">
           <Categories/>
         </v-flex>
       </v-layout>
@@ -96,9 +96,28 @@ export default {
 };
 </script>
 
-<style scoped>
+<style lang='scss' >
+$colorBg: #040028;
+$colorFg: #ffffff;
+$color: #080818;
+
+html {
+  font-size: 16px;
+  line-height: 1.15;
+  -webkit-text-size-adjust: 100%;
+  background: $colorBg;
+}
+body {
+  margin: 0;
+  background: $colorBg !important;
+  color: $colorFg;
+  font-size: 20px;
+  overflow-x: hidden;
+  line-height: 1.5em;
+  padding: 0px;
+}
 #blog {
-  margin-top: -100px;
-  z-index: 3;
+  // margin-top: -100px;
+  background: #08083d !important;
 }
 </style>

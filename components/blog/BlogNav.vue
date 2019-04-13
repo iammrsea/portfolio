@@ -1,12 +1,6 @@
 <template>
   <div>
-    <v-toolbar
-      fixed
-      :color="white"
-      :class="{transparent:isTransparent, elevation:isTransparent}"
-      app
-      :dark="dark"
-    >
+    <v-toolbar fixed color="#080818" app dark>
       <!-- <v-toolbar-side-icon class @click="drawer = !drawer"  class="hidden-md-and-up"/> -->
       <v-btn flat @click="drawer = !drawer" id="drawer" class="hidden-sm-and-up">
         <v-icon>menu</v-icon>
@@ -53,13 +47,8 @@
 <script>
 export default {
   props: {
-    isTransparent: {
-      type: Boolean,
-      required: true
-    },
     dark: {
-      type: Boolean,
-      required: true
+      type: Boolean
     }
   },
   data() {

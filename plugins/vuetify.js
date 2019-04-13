@@ -12,7 +12,8 @@ Vue.use(Vuetify, {
     warning: colors.amber.base,
     error: colors.deepOrange.accent4,
     success: colors.green.accent3,
-    portfolio: colors.amber
+    portfolio: colors.amber,
+    background: "#040028"
   },
   iconfont: "fa"
 });

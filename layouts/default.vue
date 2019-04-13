@@ -22,17 +22,18 @@
       </v-img>
     </section>
     <section v-else-if="$route.path==='/blog'">
-      <Navbar :isTransparent="isTransparent" :dark="dark"/>
-      <v-img :src="require('@/assets/img/blog3.jpg')" min-height="100" style="height:100%"></v-img>
+      <blog-nav></blog-nav>
+      <!-- <Navbar :isTransparent="isTransparent" light/> -->
+      <!-- <v-img :src="require('@/assets/img/blog3.jpg')" height="300"></v-img> -->
     </section>
     <section v-else-if="$route.path===`/blog/${$route.params.postslug}`">
-      <Navbar :isTransparent="isTransparent" :dark="dark"/>
+      <!-- <Navbar :isTransparent="isTransparent" :dark="dark"/>
       <v-img
         :src="require('@/assets/img/blog3.jpg')"
         min-height="100"
         aspect-ratio="2.78"
         style="height:100%"
-      ></v-img>
+      ></v-img>-->
     </section>
 
     <v-content>
@@ -43,9 +44,11 @@
 
 <script>
 import Navbar from "@/components/Navbar";
+import BlogNav from "@/components/blog/BlogNav";
 export default {
   components: {
-    Navbar
+    Navbar,
+    BlogNav
   },
   data() {
     return {
@@ -81,7 +84,7 @@ export default {
 }
 
 body {
-  background: #fff;
+  background: #040028 !important;
 }
 #showcase {
   margin-top: 20%;

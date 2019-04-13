@@ -102,7 +102,7 @@ export default {
   },
   head() {
     return {
-      title: "This is my custom title",
+      title: "Andrew Ekwugha | JavaScript Developer",
       meta: [
         {
           hid: "description",

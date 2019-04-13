@@ -1,6 +1,6 @@
 <template>
-  <v-card class="my-3">
-    <v-card-title primary-title class="text-sm-center" style="border:red solid 2px">Categories</v-card-title>
+  <v-card class="my-3" dark>
+    <v-card-title primary-title class="text-sm-center">Categories</v-card-title>
 
     <v-card-text>
       <v-divider></v-divider>

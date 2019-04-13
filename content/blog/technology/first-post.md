@@ -7,6 +7,7 @@ category: technology
 date: 4/2/2019
 time: 10:47PM
 slug: first-post
+thumbnails: "me2.jpg,me.jpg"
 ---
 
 Evan You, the creator of Vue, introduced [VuePress](https://vuepress.vuejs.org/) just a couple months ago. I was excited about the announcement because it seemed to be exactly what I was looking for at the time: a minimalist, optimized, content-first static site generator that trivializes the process of fusing together markdown assets with dynamic layouts and components. I read through the docs and tried it out.
