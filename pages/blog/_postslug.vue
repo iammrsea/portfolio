@@ -57,6 +57,26 @@ export default {
   },
   created() {
     this.$filterDate = filterDate;
+  },
+  head() {
+    return {
+      title: this.post.attributes.slug,
+      meta: [
+        {
+          hid: "description",
+          name: "description",
+          content: this.post.attributes.description
+        },
+        { hid: "author", name: "author", content: "Andrew Ekwugha" },
+        {
+          hid: "keywords",
+          name: "keywords",
+          content:
+            this.post.attributes.keywords ||
+            "nuxtjs, vuejs,static website, web developer,building nuxt modules,nuxt middleware"
+        }
+      ]
+    };
   }
 };
 </script>
