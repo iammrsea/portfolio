@@ -19,7 +19,10 @@
 export default {
   methods: {
     nothing(category) {
-      this.$router.push(`/blog/categories/${category}`);
+      this.$router.push({
+        path: `/blog/categories/${category}`,
+        query: { page: 1 }
+      });
     }
   },
   computed: {

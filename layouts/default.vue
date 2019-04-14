@@ -26,6 +26,11 @@
       <!-- <Navbar :isTransparent="isTransparent" light/> -->
       <!-- <v-img :src="require('@/assets/img/blog3.jpg')" height="300"></v-img> -->
     </section>
+    <section v-else-if="$route.path===`/blog/categories/${$route.params.categoryslug}`">
+      <blog-nav></blog-nav>
+      <!-- <Navbar :isTransparent="isTransparent" light/> -->
+      <!-- <v-img :src="require('@/assets/img/blog3.jpg')" height="300"></v-img> -->
+    </section>
     <section v-else-if="$route.path===`/blog/${$route.params.postslug}`">
       <!-- <Navbar :isTransparent="isTransparent" :dark="dark"/>
       <v-img

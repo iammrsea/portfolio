@@ -1,5 +1,5 @@
 <template>
-  <v-card id="blog" dark class>
+  <v-card class="blog" dark>
     <v-container>
       <v-layout row wrap>
         <v-flex xs12 sm7>
@@ -22,6 +22,11 @@
           </div>
         </v-flex>
         <v-flex sm5 class="hidden-xs-only mt-4">
+          <Categories/>
+        </v-flex>
+      </v-layout>
+      <v-layout column>
+        <v-flex xs12 class="hidden-sm-and-up mt-1">
           <Categories/>
         </v-flex>
       </v-layout>
@@ -115,7 +120,7 @@ body {
   line-height: 1.5em;
   padding: 0px;
 }
-#blog {
+.blog {
   // margin-top: -100px;
   background: #08083d !important;
 }

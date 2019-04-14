@@ -1,18 +1,37 @@
 <template>
-  <v-layout row wrap>
-    <v-flex xs12 sm7>
-      <v-layout column>
-        <v-flex xs12>Blog posts for a particular category</v-flex>
-        <v-flex v-for="(post,i) in posts" :key="i">
-          <post-preview :post="post.attributes"></post-preview>
+  <v-card class="blog">
+    <v-container>
+      <v-layout row wrap>
+        <v-flex xs12>
+          <v-layout column>
+            <!-- <v-btn flat color="portfolio" v-ripple @click="previous">
+              <v-icon left>arrow_back</v-icon>
+            </v-btn>-->
+            <v-flex xs12 class="headline white--text text-capitalize article-title">
+              <span style="cursor:pointer" @click="previous">
+                <v-icon color="portfolio" class="heading font-weight-bold" left>arrow_back</v-icon>
+              </span>
+              {{$route.params.categoryslug}}
+            </v-flex>
+            <v-flex xs12 v-for="(post,i) in paginatedPosts" :key="i">
+              <post-preview :post="post.attributes"></post-preview>
+            </v-flex>
+          </v-layout>
+          <div class="text-xs-center">
+            <v-layout justify-center>
+              <v-flex xs12>
+                <v-card flat>
+                  <v-card-text>
+                    <v-pagination v-model="pageNumber" :length="pageCount" color="background"></v-pagination>
+                  </v-card-text>
+                </v-card>
+              </v-flex>
+            </v-layout>
+          </div>
         </v-flex>
       </v-layout>
-    </v-flex>
-    <v-flex sm5 class="hidden-xs-only">
-      <h3 class="mt-4">Categories</h3>
-      <Categories/>
-    </v-flex>
-  </v-layout>
+    </v-container>
+  </v-card>
 </template>
 <script>
 import PostPreview from "@/components/blog/PostPreview";
@@ -20,12 +39,25 @@ import Categories from "@/components/blog/Categories";
 import manifest from "@/manifest";
 
 export default {
+  watchQuery: ["page"],
   components: {
     PostPreview,
     Categories
   },
-  async asyncData({ params }) {
+  data() {
+    return {
+      size: 2
+    };
+  },
+  async asyncData({ params, query }) {
+    let pageNumber = +query.page || 1;
     let posts = [];
+
+    function getTime(date) {
+      let time = new Date(date);
+      return time.getTime();
+    }
+
     for (let i = 0; i < manifest.length; i++) {
       if (manifest[i].category === params.categoryslug) {
         let url = manifest[i].url;
@@ -33,22 +65,43 @@ export default {
         posts.push(post);
       }
     }
-    return { posts };
+    posts.sort((firstPost, secondPost) => {
+      return (
+        getTime(firstPost.attributes.date) - getTime(secondPost.attributes.date)
+      );
+    });
+    return { posts, pageNumber };
   },
-  data() {
-    return {};
-  },
-  computed: {
-    param() {
-      return this.$route.params;
+  watch: {
+    pageNumber(newValue) {
+      this.$router.push({
+        path: `/blog/categories/${this.$route.params.categoryslug}`,
+        query: { page: newValue }
+      });
     }
   },
   computed: {
-    // posts() {
-    //   return this.$store.getters["blog/postsByCategory"](
-    //     this.$route.params.categoryslug
-    //   );
-    // }
+    pageCount() {
+      let listSize = this.posts.length;
+      let size = this.size;
+      return Math.ceil(listSize / size);
+    },
+    paginatedPosts() {
+      if (this.pageNumber === 1) {
+        return this.posts.slice(0, this.size);
+      }
+      let start = (this.pageNumber - 1) * this.size;
+
+      let end = start + this.size;
+      return this.posts.slice(start, end);
+    }
+  },
+  methods: {
+    previous() {
+      this.$router.push("/blog");
+    }
   }
 };
 </script>
+<style scoped>
+</style>
