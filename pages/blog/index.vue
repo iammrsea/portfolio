@@ -112,7 +112,6 @@ body {
   background: $colorBg !important;
   color: $colorFg;
   font-size: 20px;
-  overflow-x: hidden;
   line-height: 1.5em;
   padding: 0px;
 }

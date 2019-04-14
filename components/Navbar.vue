@@ -2,7 +2,7 @@
   <div>
     <v-toolbar
       fixed
-      :color="white"
+      color="white"
       :class="{transparent:isTransparent, elevation:isTransparent}"
       app
       :dark="dark"

@@ -1,12 +1,14 @@
 <script lang="js">
   import ImageView from './ImageView.vue'
-//  import hljs from 'highlight.js/lib/highlight'
-//   import javascript from 'highlight.js/lib/languages/javascript'
-//   import bash from 'highlight.js/lib/languages/bash'
+ import hljs from 'highlight.js/lib/highlight'
+  import javascript from 'highlight.js/lib/languages/javascript'
+  import bash from 'highlight.js/lib/languages/bash'
+  import java from 'highlight.js/lib/languages/java'
   
-//     hljs.registerLanguage('javascript', javascript)
-//     hljs.registerLanguage('bash', bash)
-import hljs from 'highlight.js'
+    hljs.registerLanguage('javascript', javascript)
+    hljs.registerLanguage('bash', bash)
+    hljs.registerLanguage('java', java)
+//import hljs from 'highlight.js'
    
   import 'highlight.js/styles/atom-one-dark.css'
 

@@ -31,7 +31,6 @@ npm install
 ```java
 class Animal{
   public Animal(){
-
   }
   public void bark(){
     System.out.println("Not all animals can bark");

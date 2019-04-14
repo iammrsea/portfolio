@@ -13,7 +13,7 @@
       <div>
         <h3 class="headline mb-0 article-title">{{post.title}}</h3>
         <h4 class="mt-2 portfolio--text">
-          <span>Authour:</span>
+          <span>Author:</span>
           {{post.author}}
         </h4>
         <p class="portfolio--text">Date: {{post.date | returnDate}}</p>
@@ -152,7 +152,7 @@ $colorBg: #433a8f;
   font-size: 28px;
   letter-spacing: 0.0175em;
   text-transform: uppercase;
-  text-shadow: 3px 3px 0 $colorBg;
+  text-shadow: 3px 3px 0 #433a8f;
 }
 .font-type {
   font-family: "Times New Roman", Times, serif;
