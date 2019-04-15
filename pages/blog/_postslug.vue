@@ -1,17 +1,27 @@
 <template>
   <div class="background">
-    <v-btn flat color="portfolio" v-ripple @click="previous">
+    <v-btn flat color="portfolio" v-ripple @click="previous" class="back">
       <v-icon left>arrow_back</v-icon>
       <span class="text-capitalize subheading">Back</span>
     </v-btn>
     <div class="curve-bar mb-5">
       <v-layout column justify-center>
         <v-flex xs12>
-          <h4 class="mt-2 portfolio--text pl-3 pr-3 pt-3 pb-0">
-            <span>Author:</span>
-            {{post.attributes.author}}
-          </h4>
-          <p class="portfolio--text pa-3">Date: {{$filterDate(post.attributes.date)}}</p>
+          <v-layout justify-center column>
+            <v-flex xs12 class="avatar">
+              <v-avatar size="200px">
+                <img :src="require('@/assets/img/bottom.jpg')" alt="Andrew">
+              </v-avatar>
+            </v-flex>
+            <v-flex xs12 class="avatar">
+              <h4 class="mt-2 portfolio--text pl-3 pr-3 pt-3 pb-0">
+                <span>Author:</span>
+                {{post.attributes.author}}
+              </h4>
+
+              <p class="portfolio--text pa-3">Date: {{$filterDate(post.attributes.date)}}</p>
+            </v-flex>
+          </v-layout>
         </v-flex>
         <v-flex xs12>
           <h1 class="my-3 article-title display-1">{{post.attributes.title}}</h1>
@@ -23,12 +33,12 @@
           ></dynamic-post>
         </v-flex>
       </v-layout>
+      <v-container>
+        <div class="comments mt-5">
+          <vue-disqus :shortname="shortname" :identifier="post.attributes.slug" :url="url"></vue-disqus>
+        </div>
+      </v-container>
     </div>
-    <v-container>
-      <div class="comments mt-3">
-        <vue-disqus :shortname="shortname" :identifier="post.attributes.slug" :url="url"></vue-disqus>
-      </div>
-    </v-container>
   </div>
 </template>
 <script>
@@ -105,8 +115,37 @@ $color: #080818;
   padding: 10px;
   margin-left: 30px;
   color: $colorFg;
-  margin-right: 10px;
   text-justify: auto;
+}
+
+@media screen and(min-width: 865px) {
+  .curve-bar {
+    margin-left: 100px;
+    margin-right: 100px;
+    border-right: 20px solid rgb(55, 167, 204);
+    border-top-right-radius: 40px;
+  }
+  .back {
+    margin-left: 50px;
+  }
+}
+@media screen and(min-width: 1130px) {
+  .curve-bar {
+    margin-left: 200px;
+    margin-right: 200px;
+    border-right: 20px solid rgb(55, 167, 204);
+    border-top-right-radius: 40px;
+  }
+  .back {
+    margin-left: 150px;
+  }
+}
+@media screen and(max-width: 450px) {
+  .curve-bar {
+    margin-left: 10px;
+    border-left: 10px solid rgb(55, 167, 204);
+    border-top: 10px solid rgb(55, 167, 204);
+  }
 }
 
 html {
@@ -120,6 +159,9 @@ body {
   font-size: 20px;
   line-height: 1.5em;
   padding: 0px;
+}
+.avatar {
+  text-align: center;
 }
 .myPost {
   background: $backgroud-color;

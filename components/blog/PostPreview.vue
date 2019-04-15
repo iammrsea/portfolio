@@ -1,8 +1,6 @@
 <template>
   <v-card class="mt-1 mb-2 mr-3 font-type" dark>
     <div v-if="post.thumbnails">
-      <!-- {{post.thumbnails}}
-      {{images}}-->
       <carousel-view :images="images"></carousel-view>
     </div>
     <div v-else>
@@ -55,11 +53,16 @@ export default {
   },
   methods: {
     postDetail() {
-      if (this.$route.path.split("/").length === 3) {
-        this.$router.push(`${this.$route.path}/${this.post.slug}`);
-      } else {
-        this.$router.push(`/blog/${this.post.slug}`);
-      }
+      // if (this.$route.path.split("/").length === 3) {
+      //   console.log("first condition path");
+      //   console.log(this.$route.path);
+      //   this.$router.push(`${this.$route.path}/${this.post.slug}`);
+      // } else {
+      //   this.$router.push(`/blog/${this.post.slug}`);
+      //   console.log("second condition path");
+      //   console.log(this.$route.path);
+      // }
+      this.$router.push(`/blog/${this.post.slug}`);
     }
   },
   filters: {
