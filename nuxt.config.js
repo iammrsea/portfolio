@@ -53,7 +53,7 @@ export default {
    */
   modules: [
     // Doc: https://axios.nuxtjs.org/usage
-    "@nuxtjs/axios",
+    // "@nuxtjs/axios",
     ["~/modules/generateManifest", { entryDirectory: "content" }],
     "~/modules/myhooks"
   ],
