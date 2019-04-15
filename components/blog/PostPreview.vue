@@ -49,7 +49,7 @@ export default {
       return this.post.thumbnails.split(",").map(name => `img/${name}`);
     },
     image() {
-      //return `/_nuxt/assets/img/${this.post.thumbnail}`
+      //return `img/${this.post.thumbnail}`
       return "https://cdn.vuetifyjs.com/images/cards/desert.jpg";
     }
   },

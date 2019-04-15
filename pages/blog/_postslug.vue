@@ -24,9 +24,11 @@
         </v-flex>
       </v-layout>
     </div>
-    <div class="comments mt-3">
-      <vue-disqus :shortname="shortname" :identifier="post.attributes.slug" :url="url"></vue-disqus>
-    </div>
+    <v-container>
+      <div class="comments mt-3">
+        <vue-disqus :shortname="shortname" :identifier="post.attributes.slug" :url="url"></vue-disqus>
+      </div>
+    </v-container>
   </div>
 </template>
 <script>

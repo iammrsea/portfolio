@@ -17,7 +17,7 @@
           <div class="text-xs-center">
             <v-layout justify-center>
               <v-flex xs12>
-                <v-card flat>
+                <v-card flat dark>
                   <v-card-text>
                     <v-pagination v-model="pageNumber" :length="pageCount" color="background"></v-pagination>
                   </v-card-text>
