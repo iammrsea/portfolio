@@ -4,7 +4,7 @@
       <v-icon left>arrow_back</v-icon>
       <span class="text-capitalize subheading">Back</span>
     </v-btn>
-    <div class="curve-bar">
+    <div class="curve-bar mb-5">
       <v-layout column justify-center>
         <v-flex xs12>
           <h4 class="mt-2 portfolio--text pl-3 pr-3 pt-3 pb-0">
@@ -24,6 +24,9 @@
         </v-flex>
       </v-layout>
     </div>
+    <div class="comments mt-3">
+      <vue-disqus :shortname="shortname" :identifier="post.attributes.slug" :url="url"></vue-disqus>
+    </div>
   </div>
 </template>
 <script>
@@ -37,7 +40,12 @@ export default {
   components: {
     DynamicPost
   },
-
+  data() {
+    return {
+      shortname: "myonlineportfolio-app",
+      url: "https://onlineportfolio-app.firebaseapp.com/blog"
+    };
+  },
   async asyncData({ params }) {
     let postInfo = manifest.find(post => post.slug === params.postslug);
 

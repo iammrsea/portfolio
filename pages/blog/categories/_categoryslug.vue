@@ -4,9 +4,6 @@
       <v-layout row wrap>
         <v-flex xs12>
           <v-layout column>
-            <!-- <v-btn flat color="portfolio" v-ripple @click="previous">
-              <v-icon left>arrow_back</v-icon>
-            </v-btn>-->
             <v-flex xs12 class="headline white--text text-capitalize article-title">
               <span style="cursor:pointer" @click="previous">
                 <v-icon color="portfolio" class="heading font-weight-bold" left>arrow_back</v-icon>

@@ -46,9 +46,7 @@ export default {
 
   computed: {
     images() {
-      return this.post.thumbnails
-        .split(",")
-        .map(name => `/_nuxt/assets/img/${name}`);
+      return this.post.thumbnails.split(",").map(name => `img/${name}`);
     },
     image() {
       //return `/_nuxt/assets/img/${this.post.thumbnail}`
