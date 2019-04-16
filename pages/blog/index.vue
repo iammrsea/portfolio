@@ -121,7 +121,6 @@ body {
   padding: 0px;
 }
 .blog {
-  // margin-top: -100px;
   background: #08083d !important;
 }
 </style>

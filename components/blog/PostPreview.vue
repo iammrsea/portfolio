@@ -1,5 +1,5 @@
 <template>
-  <v-card class="mt-1 mb-2 mr-3 font-type" dark>
+  <v-card class="mt-1 mb-2 font-type" dark>
     <div v-if="post.thumbnails">
       <carousel-view :images="images"></carousel-view>
     </div>
@@ -53,15 +53,6 @@ export default {
   },
   methods: {
     postDetail() {
-      // if (this.$route.path.split("/").length === 3) {
-      //   console.log("first condition path");
-      //   console.log(this.$route.path);
-      //   this.$router.push(`${this.$route.path}/${this.post.slug}`);
-      // } else {
-      //   this.$router.push(`/blog/${this.post.slug}`);
-      //   console.log("second condition path");
-      //   console.log(this.$route.path);
-      // }
       this.$router.push(`/blog/${this.post.slug}`);
     }
   },
