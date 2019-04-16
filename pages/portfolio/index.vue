@@ -201,14 +201,14 @@
         <v-container>
           <span class="text-uppercase headline portfolio--text">Hire Me</span>
           <v-card class="hire-me ma-1 pa-2 subheading" flat>
-            <v-card-text>
+            <v-card-text class="hire-me">
               Are you looking for a developer? Someone who is passionate and honest about
               their job? Someone who prioritises client's satisfaction and who is willing
               to learn new techonologies to get the job done within schedule? A freelancer
               and a team player? Look no further, I am the right guy. Contact me and I would be
               glad to work for you and/or with your team.
             </v-card-text>
-            <v-card-actions>
+            <v-card-actions class="hire-me">
               <v-layout column>
                 <v-flex xs12>
                   <span class="mt-2" style="display:block">
