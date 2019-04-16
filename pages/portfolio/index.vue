@@ -176,6 +176,7 @@
                   </v-card-title>
                   <v-card-text>
                     <p>West African Examination Council (WAEC) Certificate</p>
+                    <p class="portfolio--text subheading hidden-sm-and-up">2004-2010</p>
                   </v-card-text>
                 </v-card>
               </v-timeline-item>
@@ -190,6 +191,7 @@
                   <v-card-text>
                     <p>Bachelor of Engineering</p>
                     <p>Electrical/Electronic Engineering</p>
+                    <p class="portfolio--text subheading hidden-sm-and-up">2013-2018</p>
                   </v-card-text>
                 </v-card>
               </v-timeline-item>
@@ -197,7 +199,7 @@
           </div>
         </v-container>
       </section>
-      <section id="contact">
+      <section id="contact" style="background:#424242">
         <v-container>
           <span class="text-uppercase headline portfolio--text">Hire Me</span>
           <v-card class="hire-me ma-1 pa-2 subheading" flat>
