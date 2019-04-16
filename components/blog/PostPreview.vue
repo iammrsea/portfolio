@@ -1,5 +1,5 @@
 <template>
-  <v-card class="mt-1 mb-2 font-type" dark>
+  <v-card class="mt-1 mb-2  font-type" dark>
     <div v-if="post.thumbnails">
       <carousel-view :images="images"></carousel-view>
     </div>
@@ -53,6 +53,7 @@ export default {
   },
   methods: {
     postDetail() {
+     
       this.$router.push(`/blog/${this.post.slug}`);
     }
   },

@@ -5,7 +5,10 @@
         <v-flex xs12 sm7>
           <v-layout column>
             <v-flex xs12 class="headline white--text text-capitalize article-title">Blog posts</v-flex>
-            <v-flex xs12 v-for="(post,i) in paginatedPosts" :key="i">
+            <v-flex xs12 v-for="(post,i) in paginatedPosts" :key="i" class="mr-3 hidden-xs-only">
+              <post-preview :post="post.attributes"></post-preview>
+            </v-flex>
+            <v-flex xs12 v-for="(post,i) in paginatedPosts" :key="i" class="hidden-sm-and-up">
               <post-preview :post="post.attributes"></post-preview>
             </v-flex>
           </v-layout>
