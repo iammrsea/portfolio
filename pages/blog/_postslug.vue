@@ -54,8 +54,8 @@ export default {
   },
   data() {
     return {
-      shortname: "myonlineportfolio-app",
-      url: "https://onlineportfolio-app.firebaseapp.com/blog"
+      shortname: "mrseaonline",
+      url: "https://mrseaonline.com.ng/blog"
     };
   },
   async asyncData({ params }) {

@@ -55,6 +55,10 @@ export default {
     // Doc: https://axios.nuxtjs.org/usage
     // "@nuxtjs/axios",
     ["~/modules/generateManifest", { entryDirectory: "content" }],
+    [
+      "@nuxtjs/google-analytics",
+      { id: process.env.GOOGLE_ANALYTICS_TRACKING_ID }
+    ],
     "~/modules/myhooks"
   ],
   /*

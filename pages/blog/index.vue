@@ -8,7 +8,7 @@
             <v-flex xs12 v-for="(post,i) in paginatedPosts" :key="i" class="mr-3 hidden-xs-only">
               <post-preview :post="post.attributes"></post-preview>
             </v-flex>
-            <v-flex xs12 v-for="(post,i) in paginatedPosts" :key="i" class="hidden-sm-and-up">
+            <v-flex xs12 v-for="post in paginatedPosts" :key="post.slug" class="hidden-sm-and-up">
               <post-preview :post="post.attributes"></post-preview>
             </v-flex>
           </v-layout>
