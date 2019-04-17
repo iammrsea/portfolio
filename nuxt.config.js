@@ -57,9 +57,10 @@ export default {
     ["~/modules/generateManifest", { entryDirectory: "content" }],
     [
       "@nuxtjs/google-analytics",
-      { id: process.env.GOOGLE_ANALYTICS_TRACKING_ID }
-    ],
-    "~/modules/myhooks"
+      {
+        id: process.env.GOOGLE_ANALYTICS_TRACKING_ID
+      }
+    ]
   ],
   /*
    ** Axios module configuration
