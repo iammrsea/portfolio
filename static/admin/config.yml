@@ -12,7 +12,7 @@ public_folder: "/images/uploads"
 
 collections:
   - name: "posts"
-    label: "Post"
+    label: "Posts"
     label_singular: "Post"
     folder: "posts"
     summary: "{{title}} -- {{year}}/{{month}}/{{day}}[{{category}}]"
@@ -66,7 +66,7 @@ collections:
       - { label: "SEO Description", name: "description", widget: "text" }
 
   - name: "posts"
-    label: "Post"
+    label: "Posts"
     label_singular: "Post"
     folder: "content/posts"
     summary: "{{title}} -- {{year}}/{{month}}/{{day}}[{{category}}]"
@@ -104,6 +104,7 @@ collections:
         }
       - label: "Author of Post"
         name: "author"
+        widget: 'relation'
         collection: "authors"
         displayFields: ["name", "email"]
         searchFields: ["name", "email"]
@@ -113,9 +114,8 @@ collections:
           label: "Body",
           name: "body",
           widget: "markdown",
-          hint: "Main content goes here.",
         }
-    meta:
+  meta:
       - { label: "SEO Description", name: "description", widget: "text" }
 
   - name: "authors"
