@@ -11,70 +11,66 @@ media_folder: "static/images/uploads"
 public_folder: "/images/uploads"
 
 collections:
-   name: 'posts'
-   label: 'Post'
-   label_singular: 'Post'
-   folder: 'posts'
-   summary: '{{title}} -- {{year}}/{{month}}/{{day}}[{{category}}]'
-   create: true
-   slug: '{{slug}}'
-   filter: {field: "category", value: 'Technology'}
-   fields:
-     -{label: 'Layout', name: 'layout', widget: 'hidden', default: 'blog'}
-     -{label: 'Title of Post',
-      name: 'title', widget: 'string', 
-      required: true, tagName: 'h1' }
-     -{label: "Publish Date", name: 'date',
-      widget: 'datetime' dateFormat: 'YYYY-MM-DD',
-      timeFormat: 'HH:mm', format: 'YYYY-MM-DD HH:mm'}
-     -{label: "Category", name: 'category', widget: 'select', options: ['Technology',"Education"]}
-     -{label: 'Cover Image', name: 'thumbnail', widget: 'image', required: false}
-     -label: 'Author of Post'
-      name: 'author'
-      collection: 'authors'
-      displayFields: ['name','email']
-      searchFields: ['name','email']
-      valueField: 'name'
-     -{label: 'Post Summary',name: 'summary',widget: 'text'}
-     -{ label: 'Body', name: 'body', widget: 'markdown', hint: 'Main content goes here.' }
+  - name: 'posts'
+    label: 'Post'
+    label_singular: 'Post'
+    folder: 'posts'
+    summary: '{{title}} -- {{year}}/{{month}}/{{day}}[{{category}}]'
+    create: true
+    slug: '{{slug}}'
+    filter: {field: "category", value: 'Technology'}
+    fields:
+     - {label: 'Layout', name: 'layout', widget: 'hidden', default: 'blog'}
+     - {label: 'Title of Post', name: 'title', widget: 'string', required: true, tagName: 'h1' }
+     - {label: "Publish Date", name: 'date', widget: 'datetime' dateFormat: 'YYYY-MM-DD', timeFormat: 'HH:mm', format: 'YYYY-MM-DD HH:mm'}
+     - {label: "Category", name: 'category', widget: 'select', options: ['Technology',"Education"]}
+     - {label: 'Cover Image', name: 'thumbnail', widget: 'image', required: false}
+     - label: 'Author of Post'
+       name: 'author'
+       collection: 'authors'
+       displayFields: ['name','email']
+       searchFields: ['name','email']
+       valueField: 'name'
+     - {label: 'Post Summary',name: 'summary',widget: 'text'}
+     - { label: 'Body', name: 'body', widget: 'markdown', hint: 'Main content goes here.' }
     meta:
-      -{ label: 'SEO Description', name: 'description', widget: 'text' }
+     - { label: 'SEO Description', name: 'description', widget: 'text' }
 
-   name: 'posts'
-   label: 'Post'
-   label_singular: 'Post'
-   folder: 'content/posts'
-   summary: '{{title}} -- {{year}}/{{month}}/{{day}}[{{category}}]'
-   create: true
-   slug: '{{slug}}'
-   filter: {field: "category", value: 'Education'}
-   fields:
-     -{label: "Layout", name: "layout", widget: "hidden", default: "blog" }
-     -{label: 'Title of Post', name: 'title', widget: 'string', required: true, tagName: 'h1' }
-     -{label: "Publish Date", name: 'date', widget: 'datetime' dateFormat: 'YYYY-MM-DD', timeFormat: 'HH:mm', format: 'YYYY-MM-DD HH:mm'}
-     -{label: "Category", name: 'category', widget: 'select', options: ['Technology',"Education"]}
-     -{label: 'Cover Image', name: 'thumbnail', widget: 'image', required: false}
-     -label: 'Author of Post'
-      name: 'author'
-      collection: 'authors'
-      displayFields: ['name','email']
-      searchFields: ['name','email']
-      valueField: 'name'
-     -{label: 'Post Summary',name: 'summary',widget: 'text'}
-     -{ label: 'Body', name: 'body', widget: 'markdown', hint: 'Main content goes here.' }
+  - name: 'posts'
+    label: 'Post'
+    label_singular: 'Post'
+    folder: 'content/posts'
+    summary: '{{title}} -- {{year}}/{{month}}/{{day}}[{{category}}]'
+    create: true
+    slug: '{{slug}}'
+    filter: {field: "category", value: 'Education'}
+    fields:
+     - {label: "Layout", name: "layout", widget: "hidden", default: "blog" }
+     - {label: 'Title of Post', name: 'title', widget: 'string', required: true, tagName: 'h1' }
+     - {label: "Publish Date", name: 'date', widget: 'datetime' dateFormat: 'YYYY-MM-DD', timeFormat: 'HH:mm', format: 'YYYY-MM-DD HH:mm'}
+     - {label: "Category", name: 'category', widget: 'select', options: ['Technology',"Education"]}
+     - {label: 'Cover Image', name: 'thumbnail', widget: 'image', required: false}
+     - label: 'Author of Post'
+       name: 'author'
+       collection: 'authors'
+       displayFields: ['name','email']
+       searchFields: ['name','email']
+       valueField: 'name'
+     - {label: 'Post Summary',name: 'summary',widget: 'text'}
+     - { label: 'Body', name: 'body', widget: 'markdown', hint: 'Main content goes here.' }
     meta:
-      -{ label: 'SEO Description', name: 'description', widget: 'text' }
+     - { label: 'SEO Description', name: 'description', widget: 'text' }
 
-  -name: 'authors'
-  -label: 'Authors'
-  -folder: 'authors'
-  -create: true
-  -summary: '{{name}}---{{email}}'
-  -slug: '{{slug}}'
-  -identifier_field: name
-  -fields:
-     -{label: "Name", name: 'name', widget: 'string'}
-     -{label: "Email Address", name: 'email', widget: 'string'}
-     -{label: "Avatar", name: 'avatar', widget: 'image', required: false}
-     -{label: "Profession", name: 'profession', widget: 'string', required: false }
-     -{label: "About Me", name: 'about-me', widget: 'markdown', required: false}
+  - name: 'authors'
+    label: 'Authors'
+    folder: 'authors'
+    create: true
+    summary: '{{name}}---{{email}}'
+    slug: '{{slug}}'
+    identifier_field: name
+    fields:
+      - {label: "Name", name: 'name', widget: 'string'}
+      - {label: "Email Address", name: 'email', widget: 'string'}
+      - {label: "Avatar", name: 'avatar', widget: 'image', required: false}
+      - {label: "Profession", name: 'profession', widget: 'string', required: false }
+      - {label: "About Me", name: 'about-me', widget: 'markdown', required: false}
