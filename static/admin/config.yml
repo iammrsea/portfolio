@@ -50,6 +50,7 @@ collections:
         }
       - label: "Author of Post"
         name: "author"
+        widget: "relation"
         collection: "authors"
         displayFields: ["name", "email"]
         searchFields: ["name", "email"]
@@ -119,6 +120,7 @@ collections:
 
   - name: "authors"
     label: "Authors"
+    label_singular: "Author"
     folder: "authors"
     create: true
     summary: "{{name}}---{{email}}"
