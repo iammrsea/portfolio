@@ -20,7 +20,7 @@ collections:
    slug: '{{slug}}'
    filter: {field: "category", value: 'Technology'}
    fields:
-     -{label: 'Layout',name: 'layout', widget: 'hidden', default: 'blog'}
+     -{label: 'Layout', name: 'layout', widget: 'hidden', default: 'blog'}
      -{label: 'Title of Post',
       name: 'title', widget: 'string', 
       required: true, tagName: 'h1' }
@@ -49,7 +49,7 @@ collections:
    slug: '{{slug}}'
    filter: {field: "category", value: 'Education'}
    fields:
-     -{label: 'Layout',name: 'layout', widget: 'hidden', default: 'blog'}
+     -{label: 'Layout', name: 'layout', widget: 'hidden', default: 'blog'}
      -{label: 'Title of Post',
       name: 'title', widget: 'string', 
       required: true, tagName: 'h1' }
