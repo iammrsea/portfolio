@@ -1,6 +1,6 @@
 backend:
   name: git-gateway
-  branch: master
+  branch: netlifycms
 
 site_url: https://mrseaonline.com.ng
 display_url: https://mrseaonline.com.ng
