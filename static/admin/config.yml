@@ -104,18 +104,14 @@ collections:
         }
       - label: "Author of Post"
         name: "author"
-        widget: 'relation'
+        widget: "relation"
         collection: "authors"
         displayFields: ["name", "email"]
         searchFields: ["name", "email"]
         valueField: "name"
       - { label: "Post Summary", name: "summary", widget: "text" }
-      - {
-          label: "Body",
-          name: "body",
-          widget: "markdown",
-        }
-  meta:
+      - { label: "Body", name: "body", widget: "markdown" }
+    meta:
       - { label: "SEO Description", name: "description", widget: "text" }
 
   - name: "authors"
