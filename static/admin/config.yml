@@ -14,7 +14,7 @@ collections:
    name: 'posts'
    label: 'Post'
    label_singular: 'Post'
-   folder: 'content/posts'
+   folder: 'posts'
    summary: '{{title}} -- {{year}}/{{month}}/{{day}}[{{category}}]'
    create: true
    slug: '{{slug}}'
