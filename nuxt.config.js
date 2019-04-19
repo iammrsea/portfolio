@@ -47,7 +47,11 @@ export default {
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: ["@/plugins/vuetify", "@/plugins/disqus"],
+  plugins: [
+    "@/plugins/vuetify",
+    "@/plugins/disqus",
+    { src: "@/plugins/verifyUser", ssr: false }
+  ],
   /*
    ** Nuxt.js modules
    */
