@@ -32,9 +32,9 @@ collections:
           label: "Publish Date",
           name: "date",
           widget: "datetime",
-          dateFormat: "YYYY-MM-DD",
+          dateFormat: "MM/DD/YYYY",
           timeFormat: "HH:mm",
-          format: "YYYY-MM-DD HH:mm",
+          format: "MM/DD/YYYY HH:mm",
         }
       - {
           label: "Category",
@@ -62,7 +62,7 @@ collections:
           widget: "markdown",
           hint: "Main content goes here.",
         }
-      - { label: "SEO Description", name: "description", widget: "text" }
+      - { label: "SEO Description", name: "tags", widget: "text" }
 
   - name: "education_posts"
     label: "Edu Posts"
