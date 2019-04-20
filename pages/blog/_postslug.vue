@@ -43,7 +43,6 @@
   </div>
 </template>
 <script>
-import PostDetail from "@/components/blog/PostDetail";
 import DynamicPost from "@/components/DynamicPost.vue";
 import manifest from "../../manifest.json";
 import { filterDate } from "@/util/dateFilter";

@@ -35,8 +35,6 @@ export default function generate(moduleOptions = {}) {
   async function readFiles(entryDirectory) {
     try {
       let files = await promisifiedReaddir(entryDirectory);
-      console.log("files");
-      console.log(files);
 
       for (let i = 0; i < files.length; i++) {
         let newPath = path.resolve(entryDirectory, files[i]);
@@ -47,11 +45,8 @@ export default function generate(moduleOptions = {}) {
         } else {
           let data = await promisifiedReadFile(newPath, "utf8");
           let attributes = fm(data).attributes;
-          console.log("After passing read file through front-matter");
-          console.log(attributes);
           let pathInfo = retrievePath(newPath, options.entryDirectory);
-          console.log("path info retrieved");
-          console.log(pathInfo);
+
           let jsonObj = {
             url: pathInfo.url,
             slug: `${attributes.title
@@ -61,8 +56,7 @@ export default function generate(moduleOptions = {}) {
             category: attributes.category.toLowerCase(),
             date: attributes.date
           };
-          console.log("jsonObj saved in array");
-          console.log(jsonObj);
+
           listOfPosts.push(jsonObj);
         }
       }
