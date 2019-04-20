@@ -14,7 +14,7 @@ collections:
   - name: "technology_posts"
     label: "Tech Posts"
     label_singular: "Post"
-    folder: "posts"
+    folder: "content/posts"
     summary: "{{title}} -- {{year}}/{{month}}/{{day}} [{{category}}]"
     create: true
     slug: "{{slug}}"
@@ -66,7 +66,7 @@ collections:
   - name: "education_posts"
     label: "Edu Posts"
     label_singular: "Post"
-    folder: "posts"
+    folder: "content/posts"
     summary: "{{title}} -- {{year}}/{{month}}/{{day}} [{{category}}]"
     create: true
     slug: "{{slug}}"

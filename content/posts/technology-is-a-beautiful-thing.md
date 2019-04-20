@@ -8,8 +8,9 @@ author: Andrew Ekwugha
 summary: >-
   This is the summary of the post and truthfully, I don't really have anything
   to write
-tags: 'java, javascript, technology'
+tags: "java, javascript, technology"
 ---
+
 ## Body of the post
 
 I love the idea of using netlifycms, it makes life easy and writing posts fun. I could attach images in the middle of the posts if I choose to
@@ -21,8 +22,8 @@ I love the idea of using netlifycms, it makes life easy and writing posts fun. I
 ### Let me writing some JavaScript code because I love writing in it
 
 ```js
-function printLine(){
-console.log("This is a function to print message on the console");
+function printLine() {
+  console.log("This is a function to print message on the console");
 }
 ```
 
