@@ -10,6 +10,4 @@ description: 'education, programming'
 ---
 This is the body of this post
 
-
-
 ![Paris](/images/uploads/paris.jpg)
