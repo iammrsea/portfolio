@@ -27,10 +27,6 @@
           <h1 class="my-3 article-title display-1">{{post.attributes.title}}</h1>
         </v-flex>
         <v-flex xs12>
-          <!-- <dynamic-post
-            :renderFunc="post.default.vue.render"
-            :staticRenderFuncs="post.default.vue.staticRenderFns"
-          ></dynamic-post>-->
           <div v-html="post.html" class="head"></div>
         </v-flex>
       </v-layout>
@@ -43,7 +39,6 @@
   </div>
 </template>
 <script>
-import DynamicPost from "@/components/DynamicPost.vue";
 import manifest from "../../manifest.json";
 import { filterDate } from "@/util/dateFilter";
 
@@ -52,7 +47,7 @@ import javascript from "highlight.js/lib/languages/javascript";
 import bash from "highlight.js/lib/languages/bash";
 import java from "highlight.js/lib/languages/java";
 
-//import "highlight.js/styles/atom-one-dark.css";
+import "highlight.js/styles/atom-one-dark.css";
 
 hljs.registerLanguage("javascript", javascript);
 hljs.registerLanguage("bash", bash);
@@ -60,9 +55,6 @@ hljs.registerLanguage("java", java);
 
 export default {
   middleware: ["retrieveQuery"],
-  components: {
-    DynamicPost
-  },
   data() {
     return {
       shortname: "mrseaonline",
@@ -228,17 +220,19 @@ code {
   font-size: 20px;
 }
 // pre {
-//   // overflow: scroll;
+//   overflow-x: scroll;
 // }
 .hljs-function {
-  margin-top: 15px;
+  margin-top: 20px;
   display: inline-block;
   padding: 10px;
+  padding-left: 0px;
 }
 .hljs-class {
-  margin-top: 15px;
+  margin-top: 20px;
   display: inline-block;
   padding: 10px;
+  padding-left: 0px;
 }
 pre code {
   position: relative;
