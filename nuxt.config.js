@@ -103,17 +103,7 @@ export default {
 
       config.module.rules.push({
         test: /\.md$/,
-        use: [
-          {
-            loader: "frontmatter-markdown-loader",
-
-            options: {
-              vue: {
-                root: "dynamicMarkdown"
-              }
-            }
-          }
-        ]
+        loader: "frontmatter-markdown-loader"
       });
       // console.log(config);
       return config;

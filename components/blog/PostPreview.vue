@@ -1,10 +1,13 @@
 <template>
-  <v-card class="mt-1 mb-2  font-type" dark>
-    <div v-if="post.thumbnails">
+  <v-card class="mt-1 mb-2 font-type" dark>
+    <!-- <div v-if="post.thumbnails">
       <carousel-view :images="images"></carousel-view>
     </div>
     <div v-else>
       <v-img :src="image" aspect-ratio="2.75"></v-img>
+    </div>-->
+    <div v-if="post.thumbnail">
+      <v-img :src="post.thumbnail"></v-img>
     </div>
 
     <v-card-title primary-title>
@@ -16,7 +19,7 @@
         </h4>
         <p class="portfolio--text">Date: {{post.date | returnDate}}</p>
         <div>
-          <p>{{post.description}}</p>
+          <p>{{post.summary}}</p>
         </div>
       </div>
     </v-card-title>
@@ -41,20 +44,24 @@ export default {
   data() {
     return {};
   },
-
+  created() {},
   computed: {
-    images() {
-      return this.post.thumbnails.split(",").map(name => `img/${name}`);
-    },
-    image() {
-      //return `img/${this.post.thumbnail}`
-      return "https://cdn.vuetifyjs.com/images/cards/desert.jpg";
-    }
+    // images() {
+    //   return this.post.thumbnails.split(",").map(name => `img/${name}`);
+    // },
+    // image() {
+    //   //return `img/${this.post.thumbnail}`
+    //   return "https://cdn.vuetifyjs.com/images/cards/desert.jpg";
+    // }
   },
   methods: {
     postDetail() {
-     
-      this.$router.push(`/blog/${this.post.slug}`);
+      this.$router.push(
+        `/blog/${this.post.title
+          .split(" ")
+          .join("-")
+          .toLowerCase()}`
+      );
     }
   },
   filters: {

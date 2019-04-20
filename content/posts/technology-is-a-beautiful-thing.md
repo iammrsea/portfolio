@@ -11,15 +11,13 @@ summary: >-
 tags: "java, javascript, technology"
 ---
 
-## Body of the post
-
 I love the idea of using netlifycms, it makes life easy and writing posts fun. I could attach images in the middle of the posts if I choose to
 
-### This is the first image i would be attaching
+This is the first image i would be attaching
 
 ![first image](/images/uploads/me3.jpg "This is my photo")
 
-### Let me writing some JavaScript code because I love writing in it
+Let me writing some JavaScript code because I love writing in it
 
 ```js
 function printLine() {
@@ -27,7 +25,7 @@ function printLine() {
 }
 ```
 
-### I could also add some Java because I also love me some Java
+I could also add some Java because I also love me some Java
 
 ```java
 class Animal{
@@ -39,6 +37,7 @@ this.name= name;
 }
 public String getName(){
 return this.name;
+}
 }
 ```
 

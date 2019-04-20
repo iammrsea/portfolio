@@ -27,10 +27,11 @@
           <h1 class="my-3 article-title display-1">{{post.attributes.title}}</h1>
         </v-flex>
         <v-flex xs12>
-          <dynamic-post
+          <!-- <dynamic-post
             :renderFunc="post.default.vue.render"
             :staticRenderFuncs="post.default.vue.staticRenderFns"
-          ></dynamic-post>
+          ></dynamic-post>-->
+          <div v-html="post.html" class="head"></div>
         </v-flex>
       </v-layout>
       <v-container>
@@ -47,6 +48,17 @@ import DynamicPost from "@/components/DynamicPost.vue";
 import manifest from "../../manifest.json";
 import { filterDate } from "@/util/dateFilter";
 
+import hljs from "highlight.js/lib/highlight";
+import javascript from "highlight.js/lib/languages/javascript";
+import bash from "highlight.js/lib/languages/bash";
+import java from "highlight.js/lib/languages/java";
+
+//import "highlight.js/styles/atom-one-dark.css";
+
+hljs.registerLanguage("javascript", javascript);
+hljs.registerLanguage("bash", bash);
+hljs.registerLanguage("java", java);
+
 export default {
   middleware: ["retrieveQuery"],
   components: {
@@ -59,8 +71,7 @@ export default {
     };
   },
   async asyncData({ params }) {
-    let postInfo = manifest.find(post => post.slug === params.postslug);
-
+    let postInfo = manifest.find(postData => postData.slug === params.postslug);
     let post = await import(`@/content/${postInfo.url}`);
     return { post };
   },
@@ -74,6 +85,17 @@ export default {
         this.$router.push("/blog");
       }
     }
+  },
+  computed: {
+    initHighlightJs() {
+      let targets = document.querySelectorAll("pre code");
+      targets.forEach(target => {
+        hljs.highlightBlock(target);
+      });
+    }
+  },
+  mounted() {
+    this.initHighlightJs;
   },
 
   created() {
@@ -107,6 +129,11 @@ $colorBg: #040028;
 $colorFg: #ffffff;
 $color: #080818;
 
+img {
+  width: 100%;
+  height: auto;
+  width: auto\9; /* ie8 */
+}
 .curve-bar {
   position: relative;
   border-left: 20px solid rgb(55, 167, 204);
@@ -168,7 +195,10 @@ body {
   background: $backgroud-color;
 }
 .head {
-  font-family: "Times New Roman", Times, serif;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 25px;
+  line-height: 2em;
+  text-align: justify;
 }
 pre code.language-javascript::after,
 pre code.javascript::after {

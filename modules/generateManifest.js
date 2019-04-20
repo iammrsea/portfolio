@@ -35,8 +35,8 @@ export default function generate(moduleOptions = {}) {
   async function readFiles(entryDirectory) {
     try {
       let files = await promisifiedReaddir(entryDirectory);
-      // console.log("files");
-      // console.log(files);
+      console.log("files");
+      console.log(files);
 
       for (let i = 0; i < files.length; i++) {
         let newPath = path.resolve(entryDirectory, files[i]);
@@ -47,13 +47,22 @@ export default function generate(moduleOptions = {}) {
         } else {
           let data = await promisifiedReadFile(newPath, "utf8");
           let attributes = fm(data).attributes;
+          console.log("After passing read file through front-matter");
+          console.log(attributes);
           let pathInfo = retrievePath(newPath, options.entryDirectory);
+          console.log("path info retrieved");
+          console.log(pathInfo);
           let jsonObj = {
             url: pathInfo.url,
-            slug: `${attributes.slug}`,
-            category: pathInfo.group,
+            slug: `${attributes.title
+              .split(" ")
+              .join("-")
+              .toLowerCase()}`,
+            category: attributes.category.toLowerCase(),
             date: attributes.date
           };
+          console.log("jsonObj saved in array");
+          console.log(jsonObj);
           listOfPosts.push(jsonObj);
         }
       }
@@ -67,8 +76,8 @@ export default function generate(moduleOptions = {}) {
     let paths;
     paths = url.split("\\");
     return {
-      url: paths.slice(paths.indexOf(entryDirectory) + 1).join("/"),
-      group: paths[paths.length - 2]
+      url: paths.slice(paths.indexOf(entryDirectory) + 1).join("/")
+      // group: paths[paths.length - 2]
     };
   }
 }
