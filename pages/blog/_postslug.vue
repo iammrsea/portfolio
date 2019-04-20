@@ -64,6 +64,7 @@ export default {
   async asyncData({ params }) {
     let postInfo = manifest.find(postData => postData.slug === params.postslug);
     let post = await import(`@/content/${postInfo.url}`);
+    console.log(post.html);
     return { post };
   },
   methods: {
@@ -242,5 +243,11 @@ pre code {
   margin: 0;
   color: white;
   box-shadow: rgba(0, 0, 0, 0.45) 0 1px 4px;
+}
+.language-js {
+  padding-left: 0px;
+}
+.language-java {
+  padding-left: 0px;
 }
 </style>

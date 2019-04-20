@@ -98,6 +98,14 @@ export default {
     previous() {
       this.$router.push("/blog");
     }
+  },
+  head() {
+    return {
+      title: `Blog posts on ${this.$route.params.categoryslug}`
+    };
+  },
+  mounted() {
+    console.log(this.$route);
   }
 };
 </script>
