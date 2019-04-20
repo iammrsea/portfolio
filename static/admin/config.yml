@@ -11,8 +11,8 @@ media_folder: "static/images/uploads"
 public_folder: "/images/uploads"
 
 collections:
-  - name: "technology posts"
-    label: "Posts"
+  - name: "technology_posts"
+    label: "Tech Posts"
     label_singular: "Post"
     folder: "content/posts"
     summary: "{{title}} -- {{year}}/{{month}}/{{day}} [{{category}}]"
@@ -62,11 +62,10 @@ collections:
           widget: "markdown",
           hint: "Main content goes here.",
         }
-    meta:
       - { label: "SEO Description", name: "description", widget: "text" }
 
-  - name: "education posts"
-    label: "Posts"
+  - name: "education_posts"
+    label: "Edu Posts"
     label_singular: "Post"
     folder: "content/posts"
     summary: "{{title}} -- {{year}}/{{month}}/{{day}} [{{category}}]"
