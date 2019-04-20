@@ -94,7 +94,7 @@ export default {
   },
   head() {
     return {
-      title: this.post.attributes.slug,
+      title: this.post.attributes.title,
       meta: [
         {
           hid: "description",
