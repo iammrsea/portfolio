@@ -6,7 +6,7 @@
       <v-divider></v-divider>
       <v-list>
         <div v-for="(category,i) in categories" :key="i">
-          <v-list-tile @click="showPostsBasedCategory(category)">
+          <v-list-tile @click="showPostsBasedCategory(category.toLowerCase())">
             <v-list-tile-content>{{category}}</v-list-tile-content>
           </v-list-tile>
           <v-divider></v-divider>
