@@ -56,7 +56,6 @@ export default {
     }
 
     for (let i = 0; i < manifest.length; i++) {
-      console.log(params.categoryslug);
       if (manifest[i].category === params.categoryslug) {
         let url = manifest[i].url;
         let post = await import(`@/content/${url}`);
@@ -103,9 +102,6 @@ export default {
     return {
       title: `Blog posts on ${this.$route.params.categoryslug}`
     };
-  },
-  mounted() {
-    console.log(this.$route);
   }
 };
 </script>
