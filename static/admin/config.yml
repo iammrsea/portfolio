@@ -141,7 +141,8 @@ collections:
     files:
       - label: "Portfolio"
         name: "portfolio"
-        file: "site/portfolio.json"
+        label_singular: "Page"
+        file: "portfolio.json"
         fields:
           - { label: "About Me", name: "about-me", widget: "markdown" }
           - { label: "Skills", name: "skills", widget: "text" }
