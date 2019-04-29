@@ -135,12 +135,11 @@ collections:
           required: false,
         }
 
-  - label: "Pages"
-    name: "pages"
-    create: true
+  - name: "ages"
+    label: "Pages"
     files:
-      - label: "Portfolio"
-        name: "portfolio"
+      - name: "portfolio"
+        label: "Portfolio"
         label_singular: "Page"
         file: "portfolio.json"
         fields:
