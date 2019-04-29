@@ -144,6 +144,12 @@ collections:
         label_singular: "Page"
         file: "portfolio.json"
         fields:
+          - {
+              label: "Title",
+              name: "title",
+              widget: "string",
+              default: "About me",
+            }
           - { label: "About Me", name: "about-me", widget: "markdown" }
           - { label: "Skills", name: "skills", widget: "text" }
           - { label: "Hire Me", name: "hire-me", widget: "markdown" }
