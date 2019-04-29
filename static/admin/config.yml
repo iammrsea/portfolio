@@ -134,3 +134,16 @@ collections:
           widget: "markdown",
           required: false,
         }
+      
+  - label: "Pages"
+    name: "pages"
+    files: 
+      - label: "Portfolio"
+        name: 'portfolio'
+        file: "site/portfolio.json"
+          - fields:
+              - {label: "About Me", name: 'about-me', widget: 'markdown'}
+              - {label: "Skills", name: 'skills', widget: 'text'} 
+              - {label: "Hire Me", name: 'hire-me', widget: 'markdown'}
+              - {label: 'keywords', name: 'keywords', widget: 'text'}
+              - {label: "Photo", name: 'photo', widget: 'image', required: false}

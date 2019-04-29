@@ -9,8 +9,8 @@
         <v-flex xs12>
           <v-layout justify-center column>
             <v-flex xs12 class="avatar">
-              <v-avatar size="200px">
-                <img :src="require('@/assets/img/bottom.jpg')" alt="Andrew">
+              <v-avatar size="180px">
+                <img src="/photos/picture.png" alt="Andrew">
               </v-avatar>
             </v-flex>
             <v-flex xs12 class="avatar">
