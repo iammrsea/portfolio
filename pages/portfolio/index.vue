@@ -93,15 +93,7 @@
           </v-layout>
           <v-layout row wrap justify-center>
             <v-flex xs12 sm7>
-              <p class="white--text subheading pa-1 mt-1">
-                I am a JavaScript Full-Stack Developer. I am passionate and
-                enthusiastic about any problems relating to Software
-                Engineering. I am not yet a JavaScript or Software expert, but I
-                love to read, code, learn and add to my skill sets everyday. I
-                find it fulfilling proffering solutions to software problems. I
-                have worked with Java/Android, but I'm my interest is currently
-                inclined towards JavaScript.
-              </p>
+              <p class="white--text subheading pa-1 mt-1">{{aboutMe["about-me"]}}</p>
             </v-flex>
             <v-flex xs12 sm5>
               <v-layout column>
@@ -203,13 +195,7 @@
         <v-container>
           <span class="text-uppercase headline portfolio--text">Hire Me</span>
           <v-card class="hire-me ma-1 pa-2 subheading" flat>
-            <v-card-text class="hire-me">
-              Are you looking for a developer? Someone who is passionate and honest about
-              their job? Someone who prioritises client's satisfaction and who is willing
-              to learn new techonologies to get the job done within schedule? A freelancer
-              and a team player? Look no further, I am the right guy. Contact me and I would be
-              glad to work for you and/or with your team.
-            </v-card-text>
+            <v-card-text class="hire-me">{{aboutMe["hire-me"]}}</v-card-text>
             <v-card-actions class="hire-me">
               <v-layout column>
                 <v-flex xs12>
@@ -250,6 +236,10 @@
 </template>
 <script>
 export default {
+  async asyncData() {
+    let data = await import("@/data/pages/about-me.md");
+    return { aboutMe: data.attributes };
+  },
   data() {
     return {
       options: {
@@ -283,6 +273,9 @@ export default {
       ]
     };
   },
+  created() {
+    console.log(this.aboutMe);
+  },
   computed: {
     breakpoint() {
       // console.log(this.$vuetify.breakpoint.smAndUp);
@@ -310,7 +303,7 @@ export default {
         {
           hid: "keywords",
           name: "keywords",
-          content: this.keywords.join(", ")
+          content: this.aboutMe.keywords
         }
       ]
     };
