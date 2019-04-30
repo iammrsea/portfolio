@@ -139,7 +139,7 @@ collections:
     label: "Pages"
     label_singular: "Page"
     create: true
-    summary: "{ { title } }"
+    summary: "{{title}}"
     folder: "data/pages"
     fields:
       - { label: "Title", name: "title", widget: "string", default: "About me" }
