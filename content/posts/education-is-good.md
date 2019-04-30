@@ -1,7 +1,7 @@
 ---
 layout: blog
 title: Education is good
-date: 04/20/2019
+date: 2019/04/20
 category: Education
 thumbnail: /images/uploads/london.jpg
 author: Andrew Ekwugha
