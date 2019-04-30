@@ -32,8 +32,8 @@ collections:
           label: "Publish Date",
           name: "date",
           widget: "date",
-          dateFormat: "MM/DD/YYYY",
-          format: "MM/DD/YYYY",
+          dateFormat: "YYYY/MM/DD",
+          format: "YYYY/MM/DD",
         }
       - {
           label: "Category",
@@ -137,11 +137,11 @@ collections:
 
   - name: "pages"
     label: "Pages"
-    create: true
     files:
       - name: "portfolio"
         label: "Portfolio"
         label_singular: "Page"
+        create: true
         file: "/portfolio.json"
         fields:
           - {
