@@ -137,12 +137,12 @@ collections:
 
   - name: "pages"
     label: "Pages"
-    files:
+    label_singular: "Page"
+    create: true
+    summary: {{title}}
+    folder: 'data/pages'
       - name: "portfolio"
         label: "Portfolio"
-        label_singular: "Page"
-        create: true
-        file: "/portfolio.json"
         fields:
           - {
               label: "Title",
