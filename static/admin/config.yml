@@ -135,53 +135,23 @@ collections:
           required: false,
         }
 
-  # - name: "pages"
-  #   label: "Pages"
-  #   files:
-  #     - name: "portfolio"
-  #       label: "Portfolio"
-  #       label_singular: "Page"
-  #       file: "/portfolio.json"
-  #       fields:
-  #         - {
-  #             label: "Title",
-  #             name: "title",
-  #             widget: "string",
-  #             default: "About me",
-  #           }
-  #         - { label: "About Me", name: "about-me", widget: "markdown" }
-  #         - { label: "Skills", name: "skills", widget: "text" }
-  #         - { label: "Hire Me", name: "hire-me", widget: "markdown" }
-  #         - { label: "keywords", name: "keywords", widget: "text" }
-  #         - { label: "Photo", name: "photo", widget: "image", required: false }
-  - name: "settings"
-    label: "Settings"
-    delete: false # Prevent users from deleting documents in this collection
-    editor:
-      preview: false
+  - name: "pages"
+    label: "Pages"
+    create: true
     files:
-      - name: "general"
-        label: "Site Settings"
-        file: "_data/settings.json"
-        description: "General Site Settings"
+      - name: "portfolio"
+        label: "Portfolio"
+        label_singular: "Page"
+        file: "/portfolio.json"
         fields:
-          - { label: "Global title", name: "site_title", widget: "string" }
-          - label: "Post Settings"
-            name: posts
-            widget: "object"
-            fields:
-              - {
-                  label: "Number of posts on frontpage",
-                  name: front_limit,
-                  widget: number,
-                  min: 1,
-                  max: 10,
-                }
-              - { label: "Default Author", name: author, widget: string }
-              - {
-                  label: "Default Thumbnail",
-                  name: thumb,
-                  widget: image,
-                  class: "thumb",
-                  required: false,
-                }
+          - {
+              label: "Title",
+              name: "title",
+              widget: "string",
+              default: "About me",
+            }
+          - { label: "About Me", name: "about-me", widget: "markdown" }
+          - { label: "Skills", name: "skills", widget: "text" }
+          - { label: "Hire Me", name: "hire-me", widget: "markdown" }
+          - { label: "keywords", name: "keywords", widget: "text" }
+          - { label: "Photo", name: "photo", widget: "image", required: false }
