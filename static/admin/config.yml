@@ -139,19 +139,12 @@ collections:
     label: "Pages"
     label_singular: "Page"
     create: true
-    summary: {{title}}
-    folder: 'data/pages'
-      - name: "portfolio"
-        label: "Portfolio"
-        fields:
-          - {
-              label: "Title",
-              name: "title",
-              widget: "string",
-              default: "About me",
-            }
-          - { label: "About Me", name: "about-me", widget: "markdown" }
-          - { label: "Skills", name: "skills", widget: "text" }
-          - { label: "Hire Me", name: "hire-me", widget: "markdown" }
-          - { label: "keywords", name: "keywords", widget: "text" }
-          - { label: "Photo", name: "photo", widget: "image", required: false }
+    summary: { { title } }
+    folder: "data/pages"
+    fields:
+      - { label: "Title", name: "title", widget: "string", default: "About me" }
+      - { label: "About Me", name: "about-me", widget: "markdown" }
+      - { label: "Skills", name: "skills", widget: "text" }
+      - { label: "Hire Me", name: "hire-me", widget: "markdown" }
+      - { label: "keywords", name: "keywords", widget: "text" }
+      - { label: "Photo", name: "photo", widget: "image", required: false }
