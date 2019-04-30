@@ -1,14 +1,14 @@
 ---
 layout: blog
 title: Technology is a beautiful thing
-date: 04/20/2019
+date: 2019/04/20
 category: Technology
 thumbnail: /images/uploads/paris.jpg
 author: Andrew Ekwugha
 summary: >-
   This is the summary of the post and truthfully, I don't really have anything
   to write
-tags: "java, javascript, technology"
+tags: 'java, javascript, technology'
 ---
 
 I love the idea of using netlifycms, it makes life easy and writing posts fun. I could attach images in the middle of the posts if I choose to
