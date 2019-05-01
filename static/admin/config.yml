@@ -32,8 +32,8 @@ collections:
           label: "Publish Date",
           name: "date",
           widget: "date",
-          dateFormat: "YYYY/MM/DD",
-          format: "YYYY/MM/DD",
+          dateFormat: "YYYY-MM-DD",
+          format: "YYYY-MM-DD",
         }
       - {
           label: "Category",
@@ -84,8 +84,8 @@ collections:
           label: "Publish Date",
           name: "date",
           widget: "date",
-          dateFormat: "YYYY/MM/DD",
-          format: "YYYY/MM/DD",
+          dateFormat: "YYYY-MM-DD",
+          format: "YYYY-MM-DD",
         }
       - {
           label: "Category",

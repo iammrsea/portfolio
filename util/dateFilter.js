@@ -1,5 +1,5 @@
 export const filterDate = newDate => {
-  if (newDate.split("/").length === 3) {
+  if (newDate.split("-").length === 3) {
     let array = new Date(newDate).toString().split(" ");
     let myDate = "";
     let date = "" + array[2];
