@@ -16,7 +16,7 @@
               </v-layout>
               <v-layout row wrap justify-center>
                 <v-flex xs12 sm7>
-                  <p class="white--text subheading pa-1 mt-1">{{aboutMe["hire-me"]}}</p>
+                  <p class="white--text subheading pa-1 mt-1">{{aboutMe["about-me"]}}</p>
                 </v-flex>
                 <v-flex xs12 sm5>
                   <v-layout column>
