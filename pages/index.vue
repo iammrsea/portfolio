@@ -16,15 +16,7 @@
               </v-layout>
               <v-layout row wrap justify-center>
                 <v-flex xs12 sm7>
-                  <p class="white--text subheading pa-1 mt-1">
-                    I am a JavaScript Full-Stack Developer. I am passionate and
-                    enthusiastic about any problems relating to Software
-                    Engineering. I am not yet a JavaScript or Software expert, but I
-                    love to read, code, learn and add to my skill sets everyday. I
-                    find it fulfilling proffering solutions to software problems. I
-                    have worked with Java/Android, but I'm my interest is currently
-                    inclined towards JavaScript.
-                  </p>
+                  <p class="white--text subheading pa-1 mt-1">{{aboutMe["hire-me"]}}</p>
                 </v-flex>
                 <v-flex xs12 sm5>
                   <v-layout column>
@@ -94,6 +86,10 @@ export default {
       buttonNav: "home",
       title: ""
     };
+  },
+  async asyncData() {
+    let data = await import("@/data/pages/about-me.md");
+    return { aboutMe: data.attributes };
   },
   methods: {
     cbt() {

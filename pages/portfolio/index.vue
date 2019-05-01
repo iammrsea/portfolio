@@ -255,7 +255,8 @@ export default {
         "Excellent understanding of NodeJs, ExpressJs and MongoDb",
         "VueJs/NuxtJs, Vuetify, CSS, SASS, HTML 5, and Bootstrap 4",
         "JavaScript full-stack development",
-        "Good knowledge of version control systems such as Git etc"
+        "Good knowledge of version control systems such as Git and github etc",
+        "Excellent understanding of bundlers such as webpack"
       ],
       title: "Andrew Ekwugha | JavaScript Developer",
       keywords: [
