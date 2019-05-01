@@ -93,10 +93,10 @@
           </v-layout>
           <v-layout row wrap justify-center>
             <v-flex xs12 sm7>
-              <p class="white--text subheading pa-1 mt-1">{{aboutMe["about-me"]}}</p>
+              <p class="white--text headline pa-1 mt-1">{{aboutMe["about-me"]}}</p>
             </v-flex>
             <v-flex xs12 sm5>
-              <v-layout column>
+              <v-layout column class="headline">
                 <v-flex xs12>
                   <span class="mt-2" style="display:block">
                     <v-icon class="portfolio--text pa-1 left ml-2 heading">place</v-icon>
@@ -195,9 +195,9 @@
         <v-container>
           <span class="text-uppercase headline portfolio--text">Hire Me</span>
           <v-card class="hire-me ma-1 pa-2 subheading" flat>
-            <v-card-text class="hire-me">{{aboutMe["hire-me"]}}</v-card-text>
+            <v-card-text class="hire-me headline">{{aboutMe["hire-me"]}}</v-card-text>
             <v-card-actions class="hire-me">
-              <v-layout column>
+              <v-layout column class="headline">
                 <v-flex xs12>
                   <span class="mt-2" style="display:block">
                     <v-icon class="portfolio--text pa-1 left ml-2 heading">place</v-icon>
@@ -258,24 +258,8 @@ export default {
         "Good knowledge of version control systems such as Git and github etc",
         "Excellent understanding of bundlers such as webpack"
       ],
-      title: "Andrew Ekwugha | JavaScript Developer",
-      keywords: [
-        "Software engineer",
-        "Software developer",
-        "Web developer",
-        "Android developer",
-        "Nuxtjs",
-        "Nuxjs developer",
-        "Vuejs",
-        "Vuejs developer",
-        "Hire a web developer",
-        "Front-End developer",
-        "Full-Stack developer"
-      ]
+      title: "Andrew Ekwugha | JavaScript Developer"
     };
-  },
-  created() {
-    console.log(this.aboutMe);
   },
   computed: {
     breakpoint() {
@@ -405,5 +389,9 @@ p {
   #profession {
     margin-top: 350px;
   }
+}
+.headline {
+  line-height: 1.5 !important;
+  font-family: "Times New Roman", Times, serif !important;
 }
 </style>

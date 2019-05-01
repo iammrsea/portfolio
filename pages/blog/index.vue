@@ -1,38 +1,43 @@
 <template>
   <v-card class="blog" dark>
     <v-container>
-      <v-layout row wrap>
-        <v-flex xs12 sm7>
-          <v-layout column>
-            <v-flex xs12 class="headline white--text text-capitalize article-title">Blog posts</v-flex>
-            <v-flex xs12 v-for="(post,i) in paginatedPosts" :key="i" class="mr-3 hidden-xs-only">
-              <post-preview :post="post.attributes"></post-preview>
-            </v-flex>
-            <v-flex xs12 v-for="post in paginatedPosts" :key="post.slug" class="hidden-sm-and-up">
-              <post-preview :post="post.attributes"></post-preview>
-            </v-flex>
-          </v-layout>
-          <div class="text-xs-center">
-            <v-layout justify-center>
-              <v-flex xs12>
-                <v-card flat>
-                  <v-card-text>
-                    <v-pagination v-model="pageNumber" :length="pageCount" color="background"></v-pagination>
-                  </v-card-text>
-                </v-card>
+      <div v-if="posts.length>0">
+        <v-layout row wrap>
+          <v-flex xs12 sm7>
+            <v-layout column>
+              <v-flex xs12 class="headline white--text text-capitalize article-title">Blog posts</v-flex>
+              <v-flex xs12 v-for="(post,i) in paginatedPosts" :key="i" class="mr-3 hidden-xs-only">
+                <post-preview :post="post.attributes"></post-preview>
+              </v-flex>
+              <v-flex xs12 v-for="post in paginatedPosts" :key="post.slug" class="hidden-sm-and-up">
+                <post-preview :post="post.attributes"></post-preview>
               </v-flex>
             </v-layout>
-          </div>
-        </v-flex>
-        <v-flex sm5 class="hidden-xs-only mt-4">
-          <Categories/>
-        </v-flex>
-      </v-layout>
-      <v-layout column>
-        <v-flex xs12 class="hidden-sm-and-up mt-1">
-          <Categories/>
-        </v-flex>
-      </v-layout>
+            <div class="text-xs-center">
+              <v-layout justify-center>
+                <v-flex xs12>
+                  <v-card flat>
+                    <v-card-text>
+                      <v-pagination v-model="pageNumber" :length="pageCount" color="background"></v-pagination>
+                    </v-card-text>
+                  </v-card>
+                </v-flex>
+              </v-layout>
+            </div>
+          </v-flex>
+          <v-flex sm5 class="hidden-xs-only mt-4">
+            <Categories/>
+          </v-flex>
+        </v-layout>
+        <v-layout column>
+          <v-flex xs12 class="hidden-sm-and-up mt-1">
+            <Categories/>
+          </v-flex>
+        </v-layout>
+      </div>
+      <div v-else>
+        <p class="headline">There are no posts</p>
+      </div>
     </v-container>
   </v-card>
 </template>
@@ -60,18 +65,23 @@ export default {
       return time.getTime();
     }
 
-    for (let i = 0; i < manifest.length; i++) {
-      let url = manifest[i].url;
-      let post = await import(`@/content/${url}`);
-      posts.push(post);
-    }
+    if (manifest.length > 0) {
+      for (let i = 0; i < manifest.length; i++) {
+        let url = manifest[i].url;
+        let post = await import(`@/content/${url}`);
+        posts.push(post);
+      }
 
-    posts.sort((firstPost, secondPost) => {
-      return (
-        getTime(firstPost.attributes.date) - getTime(secondPost.attributes.date)
-      );
-    });
-    return { pageNumber, posts };
+      posts.sort((firstPost, secondPost) => {
+        return (
+          getTime(firstPost.attributes.date) -
+          getTime(secondPost.attributes.date)
+        );
+      });
+      return { pageNumber, posts };
+    } else {
+      return { pageNumber, posts };
+    }
   },
   created() {},
   watch: {

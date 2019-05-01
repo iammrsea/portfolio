@@ -8,18 +8,18 @@
               <span class="text-uppercase headline portfolio--text">About Me</span>
               <v-layout justify-center class="mt-4">
                 <v-flex xs12>
-                  <!-- <v-avatar size="300px">
-                    <img :src="require('@/assets/img/me.jpg')" alt="Andrew">
-                  </v-avatar>-->
-                  <v-img :src="require('@/assets/img/second.png')"></v-img>
+                  <v-avatar size="200px">
+                    <img src="/photos/pic.png" alt="Andrew">
+                  </v-avatar>
+                  <!-- <v-img :src="require('@/assets/img/second.png')"></v-img> -->
                 </v-flex>
               </v-layout>
               <v-layout row wrap justify-center>
                 <v-flex xs12 sm7>
-                  <p class="white--text subheading pa-1 mt-1">{{aboutMe["about-me"]}}</p>
+                  <p class="white--text headline pa-1 mt-1">{{aboutMe["about-me"]}}</p>
                 </v-flex>
                 <v-flex xs12 sm5>
-                  <v-layout column>
+                  <v-layout column align-content-end class="headline">
                     <v-flex xs12>
                       <span class="mt-2" style="display:block">
                         <v-icon class="portfolio--text pa-1 left ml-2 heading">place</v-icon>
@@ -45,7 +45,7 @@
                 </v-flex>
                 <v-layout justify-center>
                   <p
-                    class="portfolio--text subheading pa-2 mt-2"
+                    class="portfolio--text headline pa-2 mt-2"
                   >You can hire me for your web or android app projects. Check out my portfolio for more information.</p>
                 </v-layout>
               </v-layout>
@@ -55,7 +55,7 @@
       </v-card>
     </v-container>
     <v-card height="50px" flat>
-      <v-bottom-nav :value="true" absolute :active.sync="buttonNav">
+      <v-bottom-nav :value="true" absolute :active.sync="buttonNav" color="black">
         <v-btn color="primary" flat value="home" to="/">
           <span class="text-uppercase font-weight-bold">Home</span>
           <v-icon>home</v-icon>
@@ -63,16 +63,16 @@
 
         <v-btn color="primary" flat value="portfolio" to="/portfolio">
           <span class="text-uppercase pa-1 font-weight-bold portfolio--text">Portfolio</span>
-          <v-icon class="black--text font-weight-bold">person</v-icon>
+          <v-icon class="portfolio--text font-weight-bold">person</v-icon>
         </v-btn>
 
         <v-btn color="primary" to="/blog" value="blog">
           <span class="text-uppercase pa-2 font-weight-bold portfolio--text">blog</span>
-          <i class="fas fa-blog mt-2 black--text font-weight-bold"></i>
+          <i class="fas fa-blog mt-2 portfolio--text font-weight-bold"></i>
         </v-btn>
         <v-btn color="primary" flat @click="cbt" value="cbt">
           <span class="text-uppercase pa-2 font-weight-bold portfolio--text">JAMB CBT</span>
-          <i class="fas fa-pencil-alt mt-0 black--text font-weight-bold"></i>
+          <i class="fas fa-pencil-alt mt-0 portfolio--text font-weight-bold"></i>
         </v-btn>
       </v-bottom-nav>
     </v-card>
@@ -143,5 +143,9 @@ p {
 .fas {
   font-weight: bolder;
   font-size: 18px;
+}
+.headline {
+  line-height: 1.5 !important;
+  font-family: "Times New Roman", Times, serif !important;
 }
 </style>
