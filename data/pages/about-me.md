@@ -1,6 +1,6 @@
 ---
 title: About Me Page
-about-me: "I am a JavaScript Full-Stack Developer. I am passionate and\r enthusiastic about any problems relating to Software\r Engineering. I am not yet a JavaScript or Software expert, but I\r love to read, code, learn and add to my skill sets everyday. I\r find it fulfilling proffering solutions to software problems. I have worked with Java/Android, but I'm my interest is currently inclined towards JavaScript."
+about-me: "I am a JavaScript Full-Stack Developer. I am passionate and\r enthusiastic about any problems relating to Software\r Engineering. I am not yet a JavaScript or Software expert, but I\r love to read, code, learn and add to my skill sets everyday. I\r find it fulfilling proffering solutions to software problems. I have worked with Java/Android, but my interest is currently inclined towards JavaScript."
 skills: >-
   "Excellent understanding of object-oriented programming", "Excellent grasp of
   core concepts of Java and Android", "Excellent knowledge of object-oriented
