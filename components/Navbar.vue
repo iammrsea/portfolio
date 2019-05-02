@@ -38,7 +38,7 @@
             <v-list-tile-title v-text="item.title"/>
           </v-list-tile-content>
         </v-list-tile>
-        <v-list-tile>
+        <v-list-tile class="cbt">
           <v-list-tile-action>
             <i class="fas fa-pencil-alt"></i>
           </v-list-tile-action>
@@ -87,7 +87,8 @@ export default {
   },
   methods: {
     cbt() {
-      window.open("https://master-cbt.firebaseapp.com", "_blank");
+      // window.open("https://master-cbt.firebaseapp.com", "_blank");
+      window.location = `${window.location.href}/cbt`;
     }
   }
 };
@@ -103,5 +104,11 @@ export default {
 }
 #drawer {
   border-radius: 50%;
+}
+.cbt {
+  cursor: pointer;
+}
+.cbt:hover {
+  background: rgb(241, 238, 238);
 }
 </style>
