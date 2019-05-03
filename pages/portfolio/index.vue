@@ -91,12 +91,12 @@
               <img :src="require('@/assets/img/me2.jpg')" height="400" alt="Andrew">
             </v-flex>
           </v-layout>
-          <v-layout row wrap justify-center>
-            <v-flex xs12 sm7>
-              <p class="white--text headline pa-1 mt-1">{{aboutMe["about-me"]}}</p>
+          <v-layout column justify-center>
+            <v-flex xs12>
+              <p class="white--text headline pa-1 mt-3">{{aboutMe["about-me"]}}</p>
             </v-flex>
-            <v-flex xs12 sm5>
-              <v-layout column class="headline">
+            <v-flex xs12>
+              <v-layout column class="headline-2">
                 <v-flex xs12>
                   <span class="mt-2" style="display:block">
                     <v-icon class="portfolio--text pa-1 left ml-2 heading">place</v-icon>
@@ -160,30 +160,30 @@
             <v-timeline :dense="breakpoint">
               <v-timeline-item small fill-dot color="portfolio">
                 <template v-slot:opposite>
-                  <span class="portfolio--text subheading">2004-2010</span>
+                  <span class="portfolio--text headline">2004-2010</span>
                 </template>
                 <v-card class="elevation-2" color="#424242" dark>
-                  <v-card-title class="subheading portfolio--text">
+                  <v-card-title class="headline portfolio--text">
                     <span>Modern Child College</span>
                   </v-card-title>
-                  <v-card-text>
+                  <v-card-text class="headline">
                     <p>West African Examination Council (WAEC) Certificate</p>
-                    <p class="portfolio--text subheading hidden-sm-and-up">2004-2010</p>
+                    <p class="portfolio--text headline hidden-sm-and-up">2004-2010</p>
                   </v-card-text>
                 </v-card>
               </v-timeline-item>
               <v-timeline-item small fill-dot color="portfolio">
                 <template v-slot:opposite>
-                  <span class="portfolio--text subheading">2013-2018</span>
+                  <span class="portfolio--text headline">2013-2018</span>
                 </template>
                 <v-card class="elevation-2" color="#424242" dark>
-                  <v-card-title class="subheading portfolio--text">
+                  <v-card-title class="headline portfolio--text">
                     <span>University of Uyo, Uyo</span>
                   </v-card-title>
-                  <v-card-text>
+                  <v-card-text class="headline">
                     <p>Bachelor of Engineering</p>
                     <p>Electrical/Electronic Engineering</p>
-                    <p class="portfolio--text subheading hidden-sm-and-up">2013-2018</p>
+                    <p class="portfolio--text headline hidden-sm-and-up">2013-2018</p>
                   </v-card-text>
                 </v-card>
               </v-timeline-item>
@@ -197,7 +197,7 @@
           <v-card class="hire-me ma-1 pa-2 subheading" flat>
             <v-card-text class="hire-me headline">{{aboutMe["hire-me"]}}</v-card-text>
             <v-card-actions class="hire-me">
-              <v-layout column class="headline">
+              <v-layout column class="headline-2">
                 <v-flex xs12>
                   <span class="mt-2" style="display:block">
                     <v-icon class="portfolio--text pa-1 left ml-2 heading">place</v-icon>
@@ -390,8 +390,18 @@ p {
     margin-top: 350px;
   }
 }
+@media screen and (max-width: 480px) {
+  .headline-2 {
+    font-size: 18px !important;
+  }
+}
 .headline {
   line-height: 1.5 !important;
   font-family: "Times New Roman", Times, serif !important;
+}
+.headline-2 {
+  line-height: 1.5 !important;
+  font-family: "Times New Roman", Times, serif !important;
+  font-size: 23px;
 }
 </style>
