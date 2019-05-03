@@ -14,12 +14,12 @@
                   <!-- <v-img :src="require('@/assets/img/second.png')"></v-img> -->
                 </v-flex>
               </v-layout>
-              <v-layout row wrap justify-center>
-                <v-flex xs12 sm7>
+              <v-layout column justify-center>
+                <v-flex xs12>
                   <p class="white--text headline pa-1 mt-1">{{aboutMe["about-me"]}}</p>
                 </v-flex>
-                <v-flex xs12 sm5>
-                  <v-layout column align-content-end class="headline">
+                <v-flex xs12>
+                  <v-layout column align-content-end class="headline-2">
                     <v-flex xs12>
                       <span class="mt-2" style="display:block">
                         <v-icon class="portfolio--text pa-1 left ml-2 heading">place</v-icon>
@@ -43,9 +43,10 @@
                     </v-flex>
                   </v-layout>
                 </v-flex>
-                <v-layout justify-center>
+                <v-layout justify-start align-content-start>
                   <p
                     class="portfolio--text headline pa-2 mt-2"
+                    style="align-text:left"
                   >You can hire me for your web or android app projects. Check out my portfolio for more information.</p>
                 </v-layout>
               </v-layout>
@@ -147,5 +148,15 @@ p {
 .headline {
   line-height: 1.5 !important;
   font-family: "Times New Roman", Times, serif !important;
+}
+@media screen and (max-width: 480px) {
+  .headline-2 {
+    font-size: 18px !important;
+  }
+}
+.headline-2 {
+  line-height: 1.5 !important;
+  font-family: "Times New Roman", Times, serif !important;
+  font-size: 23px;
 }
 </style>
