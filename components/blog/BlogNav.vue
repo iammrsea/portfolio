@@ -76,7 +76,7 @@ export default {
   },
   methods: {
     cbt() {
-      window.open("https://master-cbt.firebaseapp.com", "_blank");
+      window.location = `${window.location.href}/cbt`;
     }
   }
 };
