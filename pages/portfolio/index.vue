@@ -93,29 +93,29 @@
           </v-layout>
           <v-layout column justify-center>
             <v-flex xs12>
-              <p class="white--text headline pa-1 mt-3">{{aboutMe["about-me"]}}</p>
+              <p class="white--text headline-2 pa-1 mt-3">{{aboutMe["about-me"]}}</p>
             </v-flex>
             <v-flex xs12>
               <v-layout column class="headline-2">
                 <v-flex xs12>
                   <span class="mt-2" style="display:block">
-                    <v-icon class="portfolio--text pa-1 left ml-2 heading">place</v-icon>
-                    <span class="portfolio--text pa-1 left heading text-uppercase">Location:</span>
-                    <span class="white--text pa-1 left heading">Nigeria</span>
+                    <v-icon class="portfolio--text pa-1 left ml-2">place</v-icon>
+                    <span class="portfolio--text pa-1 left text-uppercase">Location:</span>
+                    <span class="white--text pa-1 left">Nigeria</span>
                   </span>
                 </v-flex>
                 <v-flex xs12>
                   <span class="mt-4" style="display:block">
-                    <v-icon class="portfolio--text pa-1 left ml-2 heading">email</v-icon>
-                    <span class="portfolio--text pa-1 left heading text-uppercase">Email:</span>
-                    <span class="white--text pa-1 left heading">Ekwughaandrew@gmail.com</span>
+                    <v-icon class="portfolio--text pa-1 left ml-2">email</v-icon>
+                    <span class="portfolio--text pa-1 left text-uppercase">Email:</span>
+                    <span class="white--text pa-1 left">Ekwughaandrew@gmail.com</span>
                   </span>
                 </v-flex>
                 <v-flex xs12>
                   <span class="mt-4" style="display:block">
-                    <v-icon class="portfolio--text pa-1 left ml-2 heading">phone</v-icon>
-                    <span class="portfolio--text pa-1 left heading text-uppercase">Phone:</span>
-                    <span class="white--text pa-1 left heading">+2347067859271</span>
+                    <v-icon class="portfolio--text pa-1 left ml-2">phone</v-icon>
+                    <span class="portfolio--text pa-1 left text-uppercase">Phone:</span>
+                    <span class="white--text pa-1 left">+2347067859271</span>
                   </span>
                 </v-flex>
               </v-layout>
@@ -155,35 +155,35 @@
       </section>
       <section id="education">
         <v-container>
-          <span class="text-uppercase headline portfolio--text">Education</span>
+          <span class="text-uppercase sub portfolio--text">Education</span>
           <div>
             <v-timeline :dense="breakpoint">
               <v-timeline-item small fill-dot color="portfolio">
                 <template v-slot:opposite>
-                  <span class="portfolio--text headline">2004-2010</span>
+                  <span class="portfolio--text sub">2004-2010</span>
                 </template>
                 <v-card class="elevation-2" color="#424242" dark>
-                  <v-card-title class="headline portfolio--text">
+                  <v-card-title class="sub portfolio--text">
                     <span>Modern Child College</span>
                   </v-card-title>
-                  <v-card-text class="headline">
+                  <v-card-text class="sub">
                     <p>West African Examination Council (WAEC) Certificate</p>
-                    <p class="portfolio--text headline hidden-sm-and-up">2004-2010</p>
+                    <p class="portfolio--text sub hidden-sm-and-up">2004-2010</p>
                   </v-card-text>
                 </v-card>
               </v-timeline-item>
               <v-timeline-item small fill-dot color="portfolio">
                 <template v-slot:opposite>
-                  <span class="portfolio--text headline">2013-2018</span>
+                  <span class="portfolio--text subheaing">2013-2018</span>
                 </template>
                 <v-card class="elevation-2" color="#424242" dark>
-                  <v-card-title class="headline portfolio--text">
+                  <v-card-title class="sub portfolio--text">
                     <span>University of Uyo, Uyo</span>
                   </v-card-title>
-                  <v-card-text class="headline">
+                  <v-card-text class="sub">
                     <p>Bachelor of Engineering</p>
                     <p>Electrical/Electronic Engineering</p>
-                    <p class="portfolio--text headline hidden-sm-and-up">2013-2018</p>
+                    <p class="portfolio--text sub hidden-sm-and-up">2013-2018</p>
                   </v-card-text>
                 </v-card>
               </v-timeline-item>
@@ -194,29 +194,29 @@
       <section id="contact" style="background:#424242">
         <v-container>
           <span class="text-uppercase headline portfolio--text">Hire Me</span>
-          <v-card class="hire-me ma-1 pa-2 subheading" flat>
-            <v-card-text class="hire-me headline">{{aboutMe["hire-me"]}}</v-card-text>
+          <v-card class="hire-me ma-1 pa-2" flat>
+            <v-card-text class="hire-me headline-2">{{aboutMe["hire-me"]}}</v-card-text>
             <v-card-actions class="hire-me">
               <v-layout column class="headline-2">
                 <v-flex xs12>
                   <span class="mt-2" style="display:block">
-                    <v-icon class="portfolio--text pa-1 left ml-2 heading">place</v-icon>
-                    <span class="portfolio--text pa-1 left heading text-uppercase">Location:</span>
-                    <span class="white--text pa-1 left heading">Uyo, Nigeria</span>
+                    <v-icon class="portfolio--text pa-1 left ml-2">place</v-icon>
+                    <span class="portfolio--text pa-1 left text-uppercase">Location:</span>
+                    <span class="white--text pa-1 left">Uyo, Nigeria</span>
                   </span>
                 </v-flex>
                 <v-flex xs12>
                   <span class="mt-4" style="display:block">
-                    <v-icon class="portfolio--text pa-1 left ml-2 heading">email</v-icon>
-                    <span class="portfolio--text pa-1 left heading text-uppercase">Email:</span>
-                    <span class="white--text pa-1 left heading">Ekwughaandrew@gmail.com</span>
+                    <v-icon class="portfolio--text pa-1 left ml-2">email</v-icon>
+                    <span class="portfolio--text pa-1 left text-uppercase">Email:</span>
+                    <span class="white--text pa-1 left">Ekwughaandrew@gmail.com</span>
                   </span>
                 </v-flex>
                 <v-flex xs12>
                   <span class="mt-4" style="display:block">
-                    <v-icon class="portfolio--text pa-1 left ml-2 heading">phone</v-icon>
-                    <span class="portfolio--text pa-1 left heading text-uppercase">Phone:</span>
-                    <span class="white--text pa-1 left heading">+2347067859271</span>
+                    <v-icon class="portfolio--text pa-1 left ml-2">phone</v-icon>
+                    <span class="portfolio--text pa-1 left text-uppercase">Phone:</span>
+                    <span class="white--text pa-1 left">+2347067859271</span>
                   </span>
                 </v-flex>
               </v-layout>
@@ -402,6 +402,6 @@ p {
 .headline-2 {
   line-height: 1.5 !important;
   font-family: "Times New Roman", Times, serif !important;
-  font-size: 23px;
+  font-size: 19px;
 }
 </style>

@@ -2,7 +2,58 @@
   <v-app v-scroll="onScroll">
     <section v-if="$route.path==='/'">
       <Navbar :isTransparent="isTransparent" :dark="dark"/>
-      <v-img :src="require('@/assets/img/section.jpg')" min-height="100" style="height:100%">
+      <v-img
+        :src="require('@/assets/img/section.jpg')"
+        class="hidden-sm-and-down"
+        min-height="100"
+        style="height:100%"
+      >
+        <v-container>
+          <div id="showcase">
+            <marquee>
+              <h1
+                class="heading hidden-md-and-up text-uppercase"
+              >Welcome to my awesome online office and platform</h1>
+            </marquee>
+          </div>
+          <div id="showcase-lg">
+            <marquee>
+              <h1
+                class="display-1 hidden-sm-and-down text-uppercase"
+              >Welcome to my awesome online office and platform</h1>
+            </marquee>
+          </div>
+        </v-container>
+      </v-img>
+      <v-img
+        :src="require('@/assets/img/mobile_xs.jpg')"
+        class="hidden-sm-and-up"
+        min-height="100"
+        style="height:100%"
+      >
+        <v-container>
+          <div id="showcase">
+            <marquee>
+              <h1
+                class="heading hidden-md-and-up text-uppercase"
+              >Welcome to my awesome online office and platform</h1>
+            </marquee>
+          </div>
+          <div id="showcase-lg">
+            <marquee>
+              <h1
+                class="display-1 hidden-sm-and-down text-uppercase"
+              >Welcome to my awesome online office and platform</h1>
+            </marquee>
+          </div>
+        </v-container>
+      </v-img>
+      <v-img
+        :src="require('@/assets/img/mobile_sm.jpg')"
+        class="hidden-md-and-up hidden-xs-only"
+        min-height="100"
+        style="height:100%"
+      >
         <v-container>
           <div id="showcase">
             <marquee>

@@ -16,36 +16,36 @@
               </v-layout>
               <v-layout column justify-center>
                 <v-flex xs12>
-                  <p class="white--text headline pa-1 mt-1">{{aboutMe["about-me"]}}</p>
+                  <p class="white--text headline-2 pa-1 mt-1">{{aboutMe["about-me"]}}</p>
                 </v-flex>
                 <v-flex xs12>
                   <v-layout column align-content-end class="headline-2">
                     <v-flex xs12>
                       <span class="mt-2" style="display:block">
-                        <v-icon class="portfolio--text pa-1 left ml-2 heading">place</v-icon>
-                        <span class="portfolio--text pa-1 left heading text-uppercase">Location:</span>
-                        <span class="white--text pa-1 left heading">Nigeria</span>
+                        <v-icon class="portfolio--text pa-1 left ml-2">place</v-icon>
+                        <span class="portfolio--text pa-1 left text-uppercase">Location:</span>
+                        <span class="white--text pa-1 left">Nigeria</span>
                       </span>
                     </v-flex>
                     <v-flex xs12>
                       <span class="mt-4" style="display:block">
-                        <v-icon class="portfolio--text pa-1 left ml-2 heading">email</v-icon>
-                        <span class="portfolio--text pa-1 left heading text-uppercase">Email:</span>
-                        <span class="white--text pa-1 left heading">Ekwughaandrew@gmail.com</span>
+                        <v-icon class="portfolio--text pa-1 left ml-2">email</v-icon>
+                        <span class="portfolio--text pa-1 left text-uppercase">Email:</span>
+                        <span class="white--text pa-1 left">Ekwughaandrew@gmail.com</span>
                       </span>
                     </v-flex>
                     <v-flex xs12>
                       <span class="mt-4" style="display:block">
-                        <v-icon class="portfolio--text pa-1 left ml-2 heading">phone</v-icon>
-                        <span class="portfolio--text pa-1 left heading text-uppercase">Phone:</span>
-                        <span class="white--text pa-1 left heading">+2347067859271</span>
+                        <v-icon class="portfolio--text pa-1 left ml-2">phone</v-icon>
+                        <span class="portfolio--text pa-1 left text-uppercase">Phone:</span>
+                        <span class="white--text pa-1 left">+2347067859271</span>
                       </span>
                     </v-flex>
                   </v-layout>
                 </v-flex>
                 <v-layout justify-start align-content-start>
                   <p
-                    class="portfolio--text headline pa-2 mt-2"
+                    class="portfolio--text sub pa-2 mt-2 headline-2"
                     style="align-text:left"
                   >You can hire me for your web or android app projects. Check out my portfolio for more information.</p>
                 </v-layout>
@@ -94,7 +94,7 @@ export default {
   },
   methods: {
     cbt() {
-      window.open("https://master-cbt.firebaseapp.com", "_blank");
+      window.location = `${window.location.href}/cbt`;
     }
   },
   head() {
@@ -157,6 +157,6 @@ p {
 .headline-2 {
   line-height: 1.5 !important;
   font-family: "Times New Roman", Times, serif !important;
-  font-size: 23px;
+  font-size: 19px;
 }
 </style>
