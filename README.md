@@ -2,4 +2,4 @@
 
 > My personal blog and portfolio
 
-[Andrew Ekwugha](mrseaonline.com.ng)
+[Andrew Ekwugha](https://mrseaonline.com.ng)
