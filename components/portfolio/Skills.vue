@@ -11,7 +11,7 @@
         </v-timeline-item>
         <v-timeline-item color="portfolio" small fill-dot>
           <v-card class="elevation-2">
-            <v-card-title class="headline font-weight-bold">My Resume</v-card-title>
+            <v-card-title class="display-1 font-weight-bold">My Resume</v-card-title>
             <v-card-text class="headline">
               <p>Would you like to take a look at my resume?</p>
             </v-card-text>
@@ -19,7 +19,7 @@
               <v-spacer></v-spacer>
               <v-btn
                 @click="download"
-                class="headline text-capitalize"
+                class="headline font-weight-bold text-capitalize"
                 flat
                 color="portfolio"
               >Download</v-btn>

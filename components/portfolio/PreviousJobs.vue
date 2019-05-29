@@ -7,7 +7,7 @@
           class="display-1 portfolio--text text-xs-center pa-2 mb-2"
         >List of my previous jobs. Click on any image to check out the app</v-card-title>
         <v-card-text>
-          <v-carousel hide-controls>
+          <v-carousel hide-controls dark>
             <v-carousel-item
               v-for="(image,i) in images"
               :key="i"

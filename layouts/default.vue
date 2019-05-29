@@ -1,5 +1,5 @@
 <template >
-  <v-app v-scroll="onScroll">
+  <v-app>
     <section v-if="$route.path==='/'">
       <Navbar/>
       <section id="top">
@@ -56,32 +56,24 @@ export default {
   data() {
     return {
       right: {
-        origin: "right"
+        origin: "right",
+        reset: true
       },
       left: {
-        origin: "left"
-        // distance: "60px;"
+        origin: "left",
+        reset: true
       },
       bottom: {
-        origin: "bottom"
+        origin: "bottom",
+        reset: true
       },
       top: {
-        origin: "top"
+        origin: "top",
+        reset: true
       }
     };
   },
-  methods: {
-    onScroll(e) {
-      const scrollY = e.path[1].scrollY;
-      if (scrollY >= 100) {
-        this.isTransparent = false;
-        this.dark = false;
-      } else {
-        this.isTransparent = true;
-        this.dark = true;
-      }
-    }
-  },
+  methods: {},
   computed: {
     mdAndUp() {
       return (
