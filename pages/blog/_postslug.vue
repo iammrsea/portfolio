@@ -1,10 +1,10 @@
 <template>
-  <div class="background">
+  <div class="background" id="top">
     <v-btn flat color="portfolio" v-ripple @click="previous" class="back">
       <v-icon left>arrow_back</v-icon>
       <span class="text-capitalize subheading">Back</span>
     </v-btn>
-    <div class="curve-bar mb-5">
+    <div class="curve-bar">
       <v-layout column justify-center>
         <v-flex xs12>
           <v-layout justify-center column>

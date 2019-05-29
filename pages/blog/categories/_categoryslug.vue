@@ -3,7 +3,7 @@
     <v-container>
       <v-layout row wrap>
         <v-flex xs12>
-          <v-layout column>
+          <v-layout column id="top">
             <v-flex xs12 class="headline white--text text-capitalize article-title">
               <span style="cursor:pointer" @click="previous">
                 <v-icon color="portfolio" class="heading font-weight-bold" left>arrow_back</v-icon>

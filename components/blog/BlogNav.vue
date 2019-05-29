@@ -76,7 +76,9 @@ export default {
   },
   methods: {
     cbt() {
-      window.location = `${window.location.href}/cbt`;
+      console.log(window.location);
+      // window.location = `${window.location.href}/cbt`;
+      window.location = `${window.location.origin}/cbt`;
     }
   }
 };

@@ -1,5 +1,5 @@
 <template>
-  <v-card class="my-3" dark>
+  <v-card class="my-3" dark id="top">
     <v-card-title primary-title class="text-sm-center">Categories</v-card-title>
 
     <v-card-text>

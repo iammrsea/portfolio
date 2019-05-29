@@ -53,7 +53,8 @@ export default {
   plugins: [
     "@/plugins/vuetify",
     "@/plugins/disqus",
-    { src: "@/plugins/verifyUser", ssr: false }
+    { src: "@/plugins/verifyUser", ssr: false },
+    { src: "@/plugins/scrollingreveal", ssr: false }
   ],
   /*
    ** Nuxt.js modules

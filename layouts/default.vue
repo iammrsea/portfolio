@@ -1,123 +1,73 @@
 <template >
   <v-app v-scroll="onScroll">
     <section v-if="$route.path==='/'">
-      <Navbar :isTransparent="isTransparent" :dark="dark"/>
-      <v-img
-        :src="require('@/assets/img/section.jpg')"
-        class="hidden-sm-and-down"
-        min-height="100"
-        style="height:100%"
-      >
-        <v-container>
-          <div id="showcase">
-            <marquee>
-              <h1
-                class="heading hidden-md-and-up text-uppercase"
-              >Welcome to my awesome online office and platform</h1>
-            </marquee>
-          </div>
-          <div id="showcase-lg">
-            <marquee>
-              <h1
-                class="display-1 hidden-sm-and-down text-uppercase"
-              >Welcome to my awesome online office and platform</h1>
-            </marquee>
-          </div>
-        </v-container>
-      </v-img>
-      <v-img
-        :src="require('@/assets/img/mobile_xs.jpg')"
-        class="hidden-sm-and-up"
-        min-height="100"
-        style="height:100%"
-      >
-        <v-container>
-          <div id="showcase">
-            <marquee>
-              <h1
-                class="heading hidden-md-and-up text-uppercase"
-              >Welcome to my awesome online office and platform</h1>
-            </marquee>
-          </div>
-          <div id="showcase-lg">
-            <marquee>
-              <h1
-                class="display-1 hidden-sm-and-down text-uppercase"
-              >Welcome to my awesome online office and platform</h1>
-            </marquee>
-          </div>
-        </v-container>
-      </v-img>
-      <v-img
-        :src="require('@/assets/img/mobile_sm.jpg')"
-        class="hidden-md-and-up hidden-xs-only"
-        min-height="100"
-        style="height:100%"
-      >
-        <v-container>
-          <div id="showcase">
-            <marquee>
-              <h1
-                class="heading hidden-md-and-up text-uppercase"
-              >Welcome to my awesome online office and platform</h1>
-            </marquee>
-          </div>
-          <div id="showcase-lg">
-            <marquee>
-              <h1
-                class="display-1 hidden-sm-and-down text-uppercase"
-              >Welcome to my awesome online office and platform</h1>
-            </marquee>
-          </div>
-        </v-container>
-      </v-img>
+      <Navbar/>
+      <section id="top">
+        <v-img :src="require('@/assets/img/section.jpg')" min-height="100" style="height:100%">
+          <v-layout
+            row
+            wrap
+            id="showcase-lg"
+            class="white--text text-uppercase article-title"
+            :class="{'display-2':mdAndUp}"
+          >
+            <v-flex xs12 v-scroll-reveal="top">
+              <p class="text-xs-center">Welcome</p>
+            </v-flex>
+            <v-flex xs12 v-scroll-reveal="left">
+              <p class="text-xs-center">To</p>
+            </v-flex>
+            <v-flex xs12 v-scroll-reveal="right">
+              <p class="text-xs-center">Sea Software Solutions</p>
+            </v-flex>
+            <v-flex xs12 v-scroll-reveal="bottom">
+              <p class="text-xs-center text-capitalize mt-3">(TripleS)</p>
+            </v-flex>
+          </v-layout>
+        </v-img>
+      </section>
     </section>
     <section v-else-if="$route.path==='/blog'">
-      <blog-nav></blog-nav>
-      <!-- <Navbar :isTransparent="isTransparent" light/> -->
-      <!-- <v-img :src="require('@/assets/img/blog3.jpg')" height="300"></v-img> -->
+      <Navbar/>
     </section>
     <section v-else-if="$route.path===`/blog/categories/${$route.params.categoryslug}`">
-      <blog-nav></blog-nav>
-      <!-- <Navbar :isTransparent="isTransparent" light/> -->
-      <!-- <v-img :src="require('@/assets/img/blog3.jpg')" height="300"></v-img> -->
-    </section>
-    <section v-else-if="$route.path===`/blog/${$route.params.postslug}`">
-      <!-- <Navbar :isTransparent="isTransparent" :dark="dark"/>
-      <v-img
-        :src="require('@/assets/img/blog3.jpg')"
-        min-height="100"
-        aspect-ratio="2.78"
-        style="height:100%"
-      ></v-img>-->
+      <Navbar/>
     </section>
 
     <v-content>
       <nuxt/>
     </v-content>
+
+    <Footer v-if="notPortfolioPath"/>
   </v-app>
 </template>
 
 <script>
 import Navbar from "@/components/Navbar";
 import BlogNav from "@/components/blog/BlogNav";
+import Footer from "@/components/Footer";
+
 export default {
   components: {
     Navbar,
-    BlogNav
+    BlogNav,
+    Footer
   },
   data() {
     return {
-      clipped: false,
-
-      fixed: false,
-      isTransparent: true,
-      dark: true,
-
-      miniVariant: false,
-      right: true,
-      rightDrawer: false,
-      title: "Vuetify.js"
+      right: {
+        origin: "right"
+      },
+      left: {
+        origin: "left"
+        // distance: "60px;"
+      },
+      bottom: {
+        origin: "bottom"
+      },
+      top: {
+        origin: "top"
+      }
     };
   },
   methods: {
@@ -130,6 +80,18 @@ export default {
         this.isTransparent = true;
         this.dark = true;
       }
+    }
+  },
+  computed: {
+    mdAndUp() {
+      return (
+        this.$vuetify.breakpoint.name === "md" ||
+        this.$vuetify.breakpoint.name === "lg" ||
+        this.$vuetify.breakpoint.name === "xl"
+      );
+    },
+    notPortfolioPath() {
+      return this.$route.path !== "/portfolio";
     }
   }
 };
@@ -148,8 +110,15 @@ body {
   color: #fff;
 }
 #showcase-lg {
-  margin-top: 10%;
-  text-align: justify;
+  margin-top: 20%;
   color: #fff;
+}
+.article-title {
+  margin: 0;
+  padding-bottom: 0.5em;
+  font-size: 28px;
+  letter-spacing: 0.0175em;
+  text-transform: uppercase;
+  text-shadow: 3px 3px 0 #433a8f;
 }
 </style>
