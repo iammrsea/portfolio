@@ -32,13 +32,13 @@ export default {
           src: "/photos/converter.jpg",
           description:
             "An awesome web app which translates figures to words up to quintillion with voice note. It also converts numbers from base two to thirty-six",
-          link: `${window.location.origin}/translator`
+          link: `https://mrseaonline.com.ng/translator`
         },
         {
           src: "/photos/cbt.jpg",
           description:
             "A great computer-based-test web app to help young Nigerian students preparing to take Unified Tertiary Matriculation Examination (UTME)",
-          link: `${window.location.origin}/cbt`
+          link: `https://mrseaonline.com.ng/cbt`
         },
         {
           src: "/photos/ecommerce.jpg",
