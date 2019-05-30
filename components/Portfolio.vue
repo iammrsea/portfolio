@@ -66,9 +66,12 @@
 </template>
 <script>
 export default {
+  props:{
+    aboutMe:''
+  },
   data() {
     return {
-      aboutMe: "",
+     // aboutMe: "",
       right: {
         origin: "right"
       },
@@ -84,15 +87,15 @@ export default {
     };
   },
 
-  async created() {
-    let data = await this.getData();
-    this.aboutMe = data;
-  },
-  methods: {
-    async getData() {
-      let data = await import("@/data/pages/about-me.md");
-      return data.attributes;
-    }
-  }
+  // async created() {
+  //   let data = await this.getData();
+  //   this.aboutMe = data;
+  // },
+  // methods: {
+  //   async getData() {
+  //     let data = await import("@/data/pages/about-me.md");
+  //     return data.attributes;
+  //   }
+  // }
 };
 </script>

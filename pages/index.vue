@@ -1,6 +1,6 @@
 <template>
   <div id="container">
-    <Portfolio/>
+    <Portfolio :aboutMe="aboutMe"/>
   </div>
 </template>
 
@@ -18,8 +18,8 @@ export default {
     };
   },
   async asyncData() {
-    // let data = await import("@/data/pages/about-me.md");
-    // return { aboutMe: data.attributes };
+    let data = await import("@/data/pages/about-me.md");
+    return { aboutMe: data.attributes };
   },
   methods: {
     cbt() {

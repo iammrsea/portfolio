@@ -153,7 +153,7 @@ p {
     display: block;
   }
   #profession {
-    margin-top: 350px;
+    margin-top: 300px !important;
   }
 }
 @media screen and (max-width: 480px) {
